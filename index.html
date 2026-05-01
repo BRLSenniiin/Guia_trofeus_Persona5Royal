@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu título</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sdv-green:#4ade80;--sdv-green-dark:#166534;--sdv-green-dim:#1e5c30;
+  --sdv-gold:#fbbf24;--sdv-gold-dark:#92400e;
+  --sdv-sky:#7dd3fc;--sdv-sky-dark:#0c4a6e;
+  --sdv-red:#f87171;--sdv-red-dark:#7f1d1d;
+  --sdv-purple:#c084fc;--sdv-purple-dark:#581c87;
+  --sdv-orange:#fb923c;--sdv-orange-dark:#7c2d12;
+  --sdv-pink:#f472b6;--sdv-pink-dark:#831843;
+  --sdv-teal:#2dd4bf;--sdv-teal-dark:#134e4a;
+  --sdv-brown:#a16207;
+  --sdv-bg:#0b1a0d;--sdv-panel:#0f2212;--sdv-panel2:#142917;
+  --sdv-border:#1e4428;--sdv-border2:#2d6a3f;
+  --sdv-text:#dcfce7;--sdv-muted:#4ade8088;
+  --pixel:'Press Start 2P',monospace;
+}
+body{background:var(--sdv-bg);color:var(--sdv-text);font-family:var(--font-sans);min-height:100vh}
+
+.scanline-bg{
+  background:var(--sdv-bg);
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.15) 3px,rgba(0,0,0,.15) 4px);
+}
+
+.pixel-top{height:6px;background:repeating-linear-gradient(90deg,var(--sdv-green) 0,var(--sdv-green) 8px,var(--sdv-green-dim) 8px,var(--sdv-green-dim) 16px)}
+
+.hero{
+  background:var(--sdv-panel);
+  border-bottom:2px solid var(--sdv-border);
+  padding:0;overflow:hidden;
+}
+.hero-art{
+  background:var(--sdv-panel);
+  padding:20px 24px 0;
+  display:flex;align-items:flex-end;gap:0;
+  min-height:160px;position:relative;overflow:hidden;
+}
+.ground-strip{height:28px;background:repeating-linear-gradient(90deg,#3d2b1a 0,#3d2b1a 32px,#4a3520 32px,#4a3520 64px)}
+.sky-strip{
+  position:absolute;top:0;left:0;right:0;height:100px;
+  background:linear-gradient(180deg,#0d2235 0%,#1a3a52 60%,#1a4a2a 100%);
+}
+.stars{position:absolute;top:0;left:0;right:0;height:80px}
+.star{position:absolute;width:2px;height:2px;background:var(--sdv-text);opacity:.6}
+.pixel-scene{position:relative;z-index:2;display:flex;align-items:flex-end;gap:8px;padding:0 24px;height:120px}
+
+.px-house{
+  width:48px;height:64px;position:relative;
+  background:#5c3d1e;border:2px solid #3a2510;
+}
+.px-house::before{content:'';position:absolute;top:-20px;left:-4px;right:-4px;height:24px;background:#8b2020;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.px-house::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:14px;height:20px;background:#2a1a0a;border:1px solid #1a0f05}
+
+.px-silo{width:20px;height:56px;background:#8b6914;border:2px solid #5a4209;position:relative}
+.px-silo::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:24px;height:10px;background:#6b4f0f;border-radius:50% 50% 0 0 / 100% 100% 0 0}
+
+.px-barn{width:72px;height:52px;background:#c0392b;border:2px solid #7b241c;position:relative}
+.px-barn::before{content:'';position:absolute;top:-18px;left:0;right:0;height:20px;background:#a93226;clip-path:polygon(0 100%,50% 0,100% 100%)}
+.px-barn::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:18px;height:28px;background:#2a1a0a;border-top:0;border:1px solid #1a0f05}
+
+.px-tree{width:24px;height:48px;position:relative}
+.px-tree::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:6px;height:16px;background:#5a3825}
+.px-tree::after{content:'';position:absolute;bottom:14px;left:50%;transform:translateX(-50%);width:24px;height:36px;background:#2d6a3f;clip-path:polygon(50% 0,100% 70%,70% 70%,80% 100%,20% 100%,30% 70%,0 70%)}
+
+.px-crop{width:12px;height:32px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.px-crop-stem{width:2px;flex:1;background:#4ade80}
+.px-crop-head{width:12px;height:10px;background:#fbbf24;border-radius:50% 50% 0 0}
+
+.px-fence{display:flex;align-items:flex-end;gap:2px}
+.px-fence-post{width:4px;height:20px;background:#7c5c2a;border-top:3px solid #9a7535}
+
+.px-chicken{width:16px;height:16px;position:relative}
+.px-chicken::before{content:'';position:absolute;bottom:0;left:0;width:14px;height:10px;background:#f5f5dc;border:1px solid #ccc}
+.px-chicken::after{content:'';position:absolute;top:0;left:2px;width:8px;height:8px;background:#f5f5dc;border:1px solid #ccc;border-radius:50% 50% 0 0}
+
+.hero-info{padding:12px 24px 16px;position:relative;z-index:2}
+.hero-badge-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.hero-badge{background:var(--sdv-green-dim);border:1px solid var(--sdv-border2);color:var(--sdv-green);font-family:var(--pixel);font-size:7px;padding:3px 10px;letter-spacing:1.5px}
+.hero-title{font-family:var(--pixel);font-size:clamp(13px,2.8vw,22px);color:var(--sdv-green);letter-spacing:2px;line-height:1.5;margin-bottom:3px;text-shadow:3px 3px 0 var(--sdv-green-dark)}
+.hero-sub{color:var(--sdv-muted);font-size:11px;letter-spacing:.5px;font-style:italic;margin-bottom:10px}
+.alert-bar{background:#7f1d1d44;border:1px solid var(--sdv-red);border-left:5px solid var(--sdv-red);padding:8px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.alert-label{color:var(--sdv-red);font-family:var(--pixel);font-size:7px;letter-spacing:1px;flex-shrink:0}
+.alert-text{color:var(--sdv-text);font-size:12px}
+
+.tabs-wrap{background:var(--sdv-panel2);border-bottom:2px solid var(--sdv-border);overflow-x:auto}
+.tabs{display:flex;min-width:max-content}
+.tab{background:transparent;border:none;border-top:3px solid transparent;border-right:1px solid var(--sdv-border);color:var(--sdv-muted);padding:10px 14px;cursor:pointer;font-family:var(--font-sans);font-size:11px;font-weight:500;white-space:nowrap;transition:all .15s;letter-spacing:.3px;color:#4ade8077}
+.tab:hover:not(.active){color:var(--sdv-green);background:rgba(74,222,128,.05)}
+.tab.active{background:var(--sdv-panel);border-top:3px solid var(--sdv-green);color:var(--sdv-green)}
+
+.content{padding:20px;max-width:900px;margin:0 auto}
+
+.section-label{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.section-label span{font-family:var(--pixel);font-size:7px;letter-spacing:2px;white-space:nowrap}
+.section-label::before,.section-label::after{content:'';flex:1;height:1px}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:8px;margin-bottom:16px}
+.stat-card{background:var(--sdv-panel);border:1px solid var(--sdv-border);border-top:3px solid;padding:12px;position:relative;overflow:hidden}
+.stat-card::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 7px,rgba(0,0,0,.08) 7px,rgba(0,0,0,.08) 8px);pointer-events:none}
+.stat-lbl{font-family:var(--pixel);font-size:7px;color:#4ade8066;letter-spacing:.5px;margin-bottom:6px;line-height:1.6}
+.stat-val{font-family:var(--pixel);line-height:1.3;margin-bottom:4px}
+.stat-s{font-size:10px;font-style:italic;opacity:.6}
+
+.panel{background:var(--sdv-panel);border:1px solid var(--sdv-border);padding:16px;margin-bottom:12px}
+.panel-amber{border-top:3px solid var(--sdv-gold)}
+.panel-green{border-top:3px solid var(--sdv-green)}
+.panel-red{border-top:3px solid var(--sdv-red)}
+.panel-sky{border-top:3px solid var(--sdv-sky)}
+.panel-purple{border-top:3px solid var(--sdv-purple)}
+
+.saves-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.save-box{border:1px solid;padding:14px;position:relative;overflow:hidden}
+.save-box::before{content:'';position:absolute;top:0;right:0;width:0;height:0}
+.save-item{display:flex;gap:8px;margin-bottom:6px;font-size:12px;line-height:1.5;align-items:flex-start}
+.save-bullet{font-family:var(--pixel);font-size:7px;margin-top:3px;flex-shrink:0}
+
+.crops-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.crop-card{background:var(--sdv-panel2);border:1px solid var(--sdv-border);border-left:3px solid;padding:12px;position:relative;overflow:hidden}
+.crop-season{font-weight:500;font-size:12px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.crop-icon{font-size:14px;flex-shrink:0}
+.crop-item{font-size:11px;line-height:1.5;color:#4ade8099;padding:3px 0;border-bottom:1px solid var(--sdv-border);display:flex;align-items:center;gap:6px}
+.crop-item:last-child{border-bottom:none}
+.crop-star{color:var(--sdv-gold);font-size:9px;font-family:var(--pixel)}
+
+.bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.bar-icon{font-size:14px;width:20px;text-align:center;flex-shrink:0}
+.bar-name{font-family:var(--pixel);font-size:7px;width:62px;flex-shrink:0;line-height:1.4}
+.bar-track{flex:1;height:12px;background:var(--sdv-panel2);border:1px solid var(--sdv-border);overflow:hidden;position:relative}
+.bar-fill{height:100%;position:relative}
+.bar-fill::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 3px,rgba(0,0,0,.2) 3px,rgba(0,0,0,.2) 4px)}
+.bar-count{font-family:var(--pixel);font-size:8px;width:24px;text-align:right;flex-shrink:0}
+
+.acc-list{display:flex;flex-direction:column;gap:6px}
+.acc-item{border:1px solid var(--sdv-border)}
+.acc-btn{width:100%;background:var(--sdv-panel);border:none;padding:12px 14px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px;transition:background .1s}
+.acc-btn:hover{background:var(--sdv-panel2)}
+.acc-body{background:var(--sdv-panel2);border-top:1px solid var(--sdv-border);padding:12px 14px;font-size:12px;line-height:1.8;color:#4ade8099}
+.acc-num{font-family:var(--pixel);font-size:8px;width:26px;height:26px;border:1px solid;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.acc-title{font-size:12px;font-weight:500;color:var(--sdv-text);flex:1}
+.acc-sub{font-size:10px;margin-top:2px;opacity:.6}
+.acc-tag{font-family:var(--pixel);font-size:7px;border:1px solid;padding:2px 7px;flex-shrink:0;letter-spacing:.5px}
+.acc-arrow{font-size:9px;color:#4ade8066;flex-shrink:0}
+
+.trophy-row{display:flex;align-items:center;gap:8px;width:100%}
+.trophy-ico{font-size:18px;flex-shrink:0;width:24px;text-align:center}
+.trophy-body{flex:1;min-width:0}
+.trophy-name{font-size:12px;font-weight:500;color:var(--sdv-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trophy-sub{font-size:10px;font-style:italic;margin-top:1px;color:#4ade8066}
+.diff{font-family:var(--pixel);font-size:8px;flex-shrink:0}
+
+.missable-block{border:2px solid var(--sdv-red);border-left:6px solid var(--sdv-red);margin-bottom:14px;background:var(--sdv-panel)}
+.miss-head{background:#7f1d1d33;padding:12px 16px;border-bottom:1px solid #7f1d1d66}
+.miss-level{color:var(--sdv-red);font-family:var(--pixel);font-size:7px;letter-spacing:1px;margin-bottom:4px}
+.miss-name{color:var(--sdv-text);font-size:15px;font-weight:500}
+.miss-body{padding:14px 16px}
+.miss-desc{font-size:12px;line-height:1.8;margin-bottom:12px;color:#dcfce7bb}
+.sol-lbl{color:#4ade8066;font-family:var(--pixel);font-size:7px;letter-spacing:1px;margin-bottom:8px}
+.sol-item{background:var(--sdv-panel2);border:1px solid var(--sdv-border);padding:10px 12px;margin-bottom:6px;display:flex;gap:10px;font-size:12px;line-height:1.6;border-radius:0}
+.sol-letter{font-family:var(--pixel);font-size:9px;flex-shrink:0;margin-top:2px;width:14px}
+.dica-box{background:#fbbf2411;border:1px solid #fbbf2444;border-left:4px solid var(--sdv-gold);padding:12px;display:flex;gap:10px;font-size:12px;line-height:1.7;color:var(--sdv-gold);margin-top:4px}
+.dica-icon{font-size:16px;flex-shrink:0}
+
+.festivals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.fv-item{background:var(--sdv-panel2);border:1px solid var(--sdv-border);border-left:3px solid var(--sdv-pink);padding:10px;display:flex;gap:8px;align-items:flex-start}
+.fv-info{flex:1;min-width:0}
+.fv-name{font-size:12px;font-weight:500;color:var(--sdv-pink);margin-bottom:2px}
+.fv-date{font-family:var(--pixel);font-size:7px;color:#f472b666;letter-spacing:.5px;margin-bottom:4px}
+.fv-why{font-size:11px;color:#4ade8088;line-height:1.5}
+.fv-ico{font-size:20px;flex-shrink:0;width:28px;text-align:center}
+
+.fector-hero{background:#7f1d1d22;border:2px solid var(--sdv-red);border-left:6px solid var(--sdv-red);padding:16px;margin-bottom:16px}
+.fector-title{color:var(--sdv-red);font-family:var(--pixel);font-size:8px;letter-spacing:1px;margin-bottom:8px}
+.fector-desc{font-size:12px;line-height:1.9;color:var(--sdv-text)}
+
+.upg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px;margin-bottom:12px}
+.upg-card{background:var(--sdv-panel2);border:1px solid var(--sdv-border);border-top:2px solid;padding:12px}
+.upg-name{font-family:var(--pixel);font-size:7px;margin-bottom:6px;line-height:1.5;letter-spacing:.5px}
+.upg-when{font-size:10px;margin-bottom:6px;opacity:.6;font-style:italic}
+.upg-why{font-size:11px;line-height:1.5;color:#4ade8088}
+.upg-num{font-family:var(--pixel);font-size:9px;color:var(--sdv-green);margin-bottom:4px;opacity:.5}
+
+.eco-item{display:flex;gap:10px;margin-bottom:8px;font-size:12px;line-height:1.6;padding:8px 10px;background:var(--sdv-panel2);border:1px solid var(--sdv-border);border-left:3px solid var(--sdv-gold)}
+.eco-bullet{color:var(--sdv-gold);font-family:var(--pixel);font-size:8px;flex-shrink:0;margin-top:2px}
+
+.err-item{border:1px solid var(--sdv-border);border-left:3px solid;margin-bottom:6px;overflow:hidden}
+.err-btn{width:100%;background:var(--sdv-panel);border:none;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;text-align:left}
+.err-btn:hover{background:var(--sdv-panel2)}
+.err-name{flex:1;font-size:12px;font-weight:500;color:var(--sdv-text)}
+.err-imp{font-family:var(--pixel);font-size:7px;border:1px solid;padding:2px 6px;flex-shrink:0;letter-spacing:.5px}
+.err-body{border-top:1px solid var(--sdv-border);padding:10px 14px;background:var(--sdv-panel2);font-size:12px;line-height:1.7;display:none}
+.err-body.open{display:flex;gap:8px}
+
+.rot-item{border:1px solid var(--sdv-border);border-left:4px solid;margin-bottom:6px}
+.rot-btn{width:100%;background:var(--sdv-panel);border:none;padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:12px;text-align:left}
+.rot-btn:hover{background:var(--sdv-panel2)}
+.rot-season-icon{font-size:22px;flex-shrink:0;width:28px;text-align:center}
+.rot-season-name{font-family:var(--pixel);font-size:8px;letter-spacing:1px;margin-bottom:3px}
+.rot-meta{font-size:11px;font-style:italic;color:#4ade8077}
+.rot-count{font-size:10px;color:#4ade8055;flex-shrink:0}
+.rot-body{border-top:1px solid var(--sdv-border);padding:12px 14px;background:var(--sdv-panel2)}
+.rot-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--sdv-border)}
+.rot-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.rot-day{font-family:var(--pixel);font-size:7px;padding:3px 8px;white-space:nowrap;flex-shrink:0;letter-spacing:.5px}
+.rot-action{font-size:12px;line-height:1.6;color:var(--sdv-text)}
+
+.refs-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.ref-link{background:#185fa522;border:1px solid #185fa5;color:var(--sdv-sky);padding:6px 12px;font-size:11px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.ref-link:hover{background:#185fa544}
+
+.footer{border-top:2px solid var(--sdv-border);padding:14px 20px;text-align:center;background:var(--sdv-panel)}
+.footer-title{color:var(--sdv-green);font-family:var(--pixel);font-size:7px;letter-spacing:2px;margin-bottom:5px}
+.footer-sub{color:#4ade8044;font-size:10px;font-family:var(--pixel)}
+
+.progress-ring{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.note{color:#4ade8066;font-size:12px;font-style:italic;margin-bottom:14px;line-height:1.7;padding-left:12px;border-left:2px solid var(--sdv-border2)}
+
+.coin{display:inline-block;width:14px;height:14px;background:var(--sdv-gold);border-radius:50%;border:2px solid #92400e;vertical-align:middle;margin-right:3px}
+</style>
+
+<h2 class="sr-only">Guia de Platina Stardew Valley — 50 troféus, PS4/PS5, ~80-100h, requer 2 saves separados para troféus mutuamente exclusivos.</h2>
+
+<div class="scanline-bg">
+<div class="pixel-top"></div>
+
+<div class="hero">
+  <div class="hero-art" style="padding:0;height:140px;position:relative">
+    <div class="sky-strip">
+      <div class="stars" id="stars"></div>
+    </div>
+    <div style="position:relative;z-index:2;width:100%;display:flex;align-items:flex-end;padding:0 20px;height:100%">
+      <div style="display:flex;align-items:flex-end;gap:6px;flex:1">
+        <div class="px-tree"></div>
+        <div class="px-tree" style="height:42px;transform:scaleX(-1)"></div>
+        <div class="px-house"></div>
+        <div style="width:6px"></div>
+        <div class="px-silo"></div>
+        <div style="width:4px"></div>
+        <div class="px-barn"></div>
+        <div style="width:8px"></div>
+        <div class="px-fence"><div class="px-fence-post"></div><div style="width:24px;height:6px;background:#7c5c2a;margin-bottom:7px"></div><div class="px-fence-post"></div><div style="width:24px;height:6px;background:#7c5c2a;margin-bottom:7px"></div><div class="px-fence-post"></div></div>
+        <div style="display:flex;gap:8px;align-items:flex-end;padding-bottom:2px">
+          <div class="px-crop"><div class="px-crop-stem"></div><div class="px-crop-head"></div></div>
+          <div class="px-crop" style="height:28px"><div class="px-crop-stem"></div><div class="px-crop-head" style="background:#f472b6"></div></div>
+          <div class="px-crop" style="height:24px"><div class="px-crop-stem"></div><div class="px-crop-head" style="background:#4ade80;width:10px;height:8px"></div></div>
+        </div>
+        <div style="flex:1"></div>
+        <div style="text-align:right;padding-right:4px">
+          <div style="font-family:var(--pixel);font-size:8px;color:var(--sdv-gold);letter-spacing:1px;margin-bottom:4px">ANO 1 · DIA 13</div>
+          <div style="font-family:var(--pixel);font-size:7px;color:#4ade8077;letter-spacing:.5px">PRIMAVERA</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:20px;background:repeating-linear-gradient(90deg,#3d2b1a 0,#3d2b1a 32px,#4a3520 32px,#4a3520 64px)"></div>
+  </div>
+
+  <div class="hero-info">
+    <div class="hero-badge-row">
+      <span class="hero-badge">GUIA DE PLATINA</span>
+      <span class="hero-badge" style="border-color:var(--sdv-gold);color:var(--sdv-gold);background:#92400e33">PS4 / PS5</span>
+      <span class="hero-badge" style="border-color:var(--sdv-purple);color:var(--sdv-purple);background:#581c8733">3.57% RARIDADE</span>
+    </div>
+    <div class="hero-title">STARDEW VALLEY</div>
+    <div class="hero-sub">ConcernedApe · 2016 · Roteiro otimizado para platina · ~80-100h</div>
+    <div class="alert-bar">
+      <span class="alert-label">⚠ 2 SAVES OBRIGATÓRIOS</span>
+      <span class="alert-text">Lenda Local (CC) e Membro Joja são mutuamente exclusivos — salves separados!</span>
+    </div>
+  </div>
+
+  <div class="tabs-wrap">
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="visao">🌾 Visão Geral</button>
+      <button class="tab" data-tab="missable">⚠️ Missable</button>
+      <button class="tab" data-tab="roteiro">📅 Roteiro por Ano</button>
+      <button class="tab" data-tab="trofeus">🏆 Troféus-Chave</button>
+      <button class="tab" data-tab="fector">🕹️ Fector's Challenge</button>
+      <button class="tab" data-tab="upgrades">🔧 Upgrades</button>
+      <button class="tab" data-tab="erros">💀 Erros Fatais</button>
+    </div>
+  </div>
+</div>
+
+<div class="content" id="content"></div>
+
+<div class="footer">
+  <div class="footer-title">✦ STARDEW VALLEY ✦ GUIA DE PLATINA ✦</div>
+  <div class="footer-sub">CONCERNEDAPE · 2016 · PSNPROFILES · STARDEW WIKI</div>
+</div>
+</div>
+
+<script>
+const STATS=[
+  {l:"Total Troféus",v:"50",s:"1P · 4G · 14S · 31B",c:"#4ade80"},
+  {l:"Platina",v:"SIM",s:"'Uma Vida Completa'",c:"#fbbf24"},
+  {l:"Playthroughs",v:"2",s:"CC + Joja",c:"#fb923c"},
+  {l:"Tempo Casual",v:"150h+",s:"Sem guia",c:"#4ade8066"},
+  {l:"Com Guia",v:"~90h",s:"Otimizado",c:"#4ade80"},
+  {l:"Dificuldade",v:"6/10",s:"Fector é duro",c:"#fb923c"},
+  {l:"Missable",v:"2",s:"CC vs Joja",c:"#f87171"},
+  {l:"Raridade",v:"3.57%",s:"Top platinas",c:"#c084fc"},
+];
+
+const TROFEUS=[
+  {nome:"Lenda",ptbr:"Legend",tipo:"gold",dif:"★★★★☆",tag:"DINHEIRO",tagC:"#fbbf24",desc:"Acumule 10.000.000g — é acumulativo, não precisa ter tudo de uma vez. A melhor estratégia: Lúpulo em Kegs (Hidromel = 500g/unidade com ciclo rápido) + Trufas em Prensas de Azeite (1.491g/unidade). Tenha pelo menos 12 Kegs no final do Ano 1."},
+  {nome:"Mestre Pescador",ptbr:"Master Angler",tipo:"gold",dif:"★★★★☆",tag:"PESCA",tagC:"#7dd3fc",desc:"Capture TODOS os 78 peixes base. Inclui peixes de chuva, à noite, por estação e por local. Dica crucial: o Carrinho Viajante (sexta e domingo) vende peixes fora de temporada. Verifique TODA semana — é a forma mais fácil de pegar os raros."},
+  {nome:"Desafio de Fector",ptbr:"Fector's Challenge",tipo:"gold",dif:"★★★★★",tag:"HABILIDADE",tagC:"#f87171",desc:"Vença Journey of the Prairie King sem morrer UMA ÚNICA VEZ. Com Sleep Scumming (patch 1.5+) ficou factível: jogue até o fim de um nível sem morrer, pause e saia antes de salvar, durma para salvar o progresso. Se morrer, carregue o save anterior."},
+  {nome:"Chef Gourmet",ptbr:"Gourmet Chef",tipo:"silver",dif:"★★★★☆",tag:"CULINÁRIA",tagC:"#f472b6",desc:"Cozinhe todas as 80 receitas. Assista Queen of Sauce TODO domingo e quarta — algumas receitas SÓ aparecem nesse programa. Se perder um episódio, espera 2 anos para repetir. Algumas receitas vêm de amizades a corações específicos."},
+  {nome:"O Fazendeiro Amado",ptbr:"The Beloved Farmer",tipo:"silver",dif:"★★★★☆",tag:"AMIZADE",tagC:"#f472b6",desc:"Tenha 8 vilarejos a 10 corações. Dê 2 presentes/semana (os favoritos dobram XP de amizade). Priorize: Harvey, Leah, Penny, Alex, Shane, Emily, Clint, Demetrius. Casamentos contam — case-se para facilitar."},
+  {nome:"Lenda Local",ptbr:"Local Legend",tipo:"silver",dif:"★★★☆☆",tag:"CENTRO COM.",tagC:"#4ade80",desc:"Complete TODOS os pacotes do Centro Comunitário. Requer planejamento sazonal rigoroso — alguns itens só aparecem uma vez por ano. MUTUAMENTE EXCLUSIVO com Membro Joja. Faça no Save 1 principal."},
+  {nome:"Membro Joja do Ano",ptbr:"Joja Co. Member",tipo:"silver",dif:"★★★☆☆",tag:"JOJA",tagC:"#fb923c",desc:"Compre associação Joja (5.000g) e financie os 5 projetos comunitários (~150.000g total). Faça em um segundo save dedicado. MUTUAMENTE EXCLUSIVO com Lenda Local. Foque apenas em ganhar dinheiro nesse save."},
+  {nome:"Envio Completo",ptbr:"Full Shipment",tipo:"silver",dif:"★★★★☆",tag:"COLEÇÃO",tagC:"#a16207",desc:"Envie pelo menos 1 de cada item do jogo. Verifique a aba 'Coleções' no menu regularmente para ver o que falta. Importante: artesanato processado em Kegs e Prensas conta separado do ingrediente bruto."},
+  {nome:"Mestre Artesão",ptbr:"Craft Master",tipo:"silver",dif:"★★★☆☆",tag:"ARTESANATO",tagC:"#a16207",desc:"Crie pelo menos 1 de cada item artesanal. Construa todas as estruturas e equipamentos. Itens frequentemente esquecidos: Esporão de Inverno, Crystal Floor e Garden Pot. Consulte a wiki para lista completa."},
+  {nome:"Rei da Pradaria",ptbr:"King of the Prairie",tipo:"bronze",dif:"★★★☆☆",tag:"MINIJOGO",tagC:"#fb923c",desc:"Complete Journey of the Prairie King normalmente (mortes permitidas). Faça ANTES de tentar Fector's Challenge — você ganha a máquina arcade para casa, que é necessária para o troféu difícil."},
+];
+
+const ANOS=[
+  {ano:"PRIMAVERA ANO 1",cor:"#4ade80",ico:"🌱",meta:"Fundação: dinheiro, amizades, Centro Comunitário",dias:[
+    {d:"Dia 1",a:"Plante as 15 sementes de Pastinaca → Limpe a fazenda → Apresente-se a TODOS os vilarejos (importante para amizade)"},
+    {d:"Dia 2",a:"Compre Sementes de Couve e Batata em Pierre → Plante o máximo possível → Inicie a mina quando desbloquear"},
+    {d:"Dia 5",a:"Regue TODOS os dias sem falta. Compre Fertilizante em Pierre e use nas plantações de maior valor"},
+    {d:"Dia 7",a:"Festival Dança das Flores — apareça e dance com alguém → Troféu 'Flores da Primavera'"},
+    {d:"Dia 8–13",a:"Minere todos os dias até nível 40+ → Colete Cobre para upgrades → Pesque para bundles"},
+    {d:"Dia 13 ⚠️",a:"OBRIGATÓRIO: Feira do Ovo — compre Sementes de Morango → Plante imediatamente → 2 colheitas antes do fim da estação"},
+    {d:"Dia 15",a:"Upgrade da Enxada para Cobre em Clint (leve 2 dias antes) → Planta 3 sementes por clique"},
+    {d:"Dia 16–25",a:"Minere para Ferro → Upgrade do Regador para Cobre → Compre Mochila Grande (2.000g em Pierre) o quanto antes"},
+    {d:"Dia 28",a:"Colha TUDO antes da meia-noite → Guarde sementes para próximas estações → Venda o excedente"},
+  ]},
+  {ano:"VERÃO ANO 1",cor:"#fbbf24",ico:"☀️",meta:"Animais, amizades e minas até nível 80",dias:[
+    {d:"Dia 1",a:"Plante Melão e Mirtilo imediatamente → Melão = bundle de Verão → Mirtilo = múltiplas colheitas lucrativas"},
+    {d:"Dia 1–7",a:"Compre Galinheiro em Robin (4.000g + 150 Madeira + 150 Pedra) → Compre Galinha em Marnie → Construa Celeiro"},
+    {d:"Dia 8",a:"Compre Sementes de Lúpulo (cresce em treliça, colheita diária) → O cultivo mais lucrativo em Kegs"},
+    {d:"Dia 11",a:"Festival do Golfinho → Pesque o maior peixe possível → Ponto de amizade com todos"},
+    {d:"Dia 15",a:"Auditoria do Centro Comunitário — verifique o que ainda falta → Planeje colheitas de Outono necessárias"},
+    {d:"Dia 20+",a:"Minere para Ouro (nível 80+) → Priorize Regador de Ouro (rega 18 tiles de vez, libera energia para minas)"},
+    {d:"Dia 25",a:"Festival de Dança de Verão → Importante para progresso de amizade com todos os vilarejos"},
+    {d:"Dia 28",a:"Colha tudo + guarde sementes de qualidade → Comece a planejar a Estufa para o inverno"},
+  ]},
+  {ano:"OUTONO ANO 1",cor:"#fb923c",ico:"🍂",meta:"Cogumelos, Trufa e chegar ao nível 120 da Mina",dias:[
+    {d:"Dia 1",a:"Plante Abóbora (bundle de Outono) e Uva (vinho em Keg = alta renda) → Lúpulo ainda produz"},
+    {d:"Dia 1",a:"META PRINCIPAL: alcance o nível 120 da Mina → Obtém a Espada do Crânio (melhor espada) e ativa o Elevador"},
+    {d:"Dia 8",a:"Festival de Dança dos Espíritos → Colete itens de Outono raros no campo à noite"},
+    {d:"Dia 15",a:"Verifique bundles: tem Porão? Carvalho de Cocaranha? Pesque os peixes de Outono que faltam"},
+    {d:"Dia 16 ⚠️",a:"Feira do Vale de Stardew → Leve itens de QUALIDADE DOURADA para vencer a exibição → Troféu 'Vitória na Feira'"},
+    {d:"Dia 27",a:"Festival dos Fantasmas → Colha Cerejas dos Espíritos (ingrediente de culinária raro, disponível 1x/ano)"},
+    {d:"Dia 28",a:"Prepare inventário para Inverno: estoque Madeira, Pedra, Carvão e Alimentos para energia"},
+  ]},
+  {ano:"INVERNO ANO 1",cor:"#7dd3fc",ico:"❄️",meta:"Pesca, culinária, amizades e finalizar o CC",dias:[
+    {d:"Dia 1–7",a:"Sem plantações = foco total em pesca, mineração e amizades → Pesque TODOS os peixes de inverno faltantes"},
+    {d:"Dia 8",a:"Festival do Inverno → Dance na fogueira → Não perca, é obrigatório para troféu relacionado"},
+    {d:"Dia 15",a:"Noite das Estrelas Gêmeas → Opcional, mas boa fonte de pontos de amizade e coleção de rarecrows"},
+    {d:"Dia 16+",a:"Complete bundles faltantes → Use o Carrinho Viajante para peixes raros → Pague Willy se precisar"},
+    {d:"Dia 20",a:"Auditoria final: quantos bundles faltam? Com bom planejamento é possível completar o CC no Ano 1"},
+    {d:"Dia 25",a:"Festa do Inverno → Troque presentes com vilarejos (aumenta amizade) → Troféu 'Feliz Inverno'"},
+    {d:"Dia 28",a:"Planejamento do Ano 2: liste o que falta (peixes? cultivos? receitas?) e prepare uma estratégia"},
+  ]},
+  {ano:"ANO 2 — FOCO EM TROFÉUS",cor:"#c084fc",ico:"⭐",meta:"Coletas, amizades, habilidades e culinária",dias:[
+    {d:"Primavera 2",a:"Plante 15 de CADA cultivo de Primavera → Troféu 'Polikultura' exige 15 unidades de cada um dos 28 cultivos"},
+    {d:"Primavera 2",a:"Dê 2 presentes/semana a todos → 'O Fazendeiro Amado' = 8 vilarejos a 10 corações"},
+    {d:"Verão 2",a:"300 unidades de um único cultivo → Troféu 'Monocultura' → Mirtilo ou Lúpulo são os mais eficientes"},
+    {d:"Qualquer",a:"Assista Queen of Sauce domingo e quarta → 80 receitas para 'Chef Gourmet' → Anote as datas na wiki"},
+    {d:"Qualquer",a:"Pesque em todos os biomas → 'Ângulo Mestre' = todos os 78 peixes → Carrinho Viajante é seu aliado"},
+    {d:"Ano 2+",a:"Nível 10 em TODAS as 5 habilidades (Farming, Fishing, Foraging, Mining, Combat) → necessário para 'Lenda'"},
+    {d:"Ano 2+",a:"Desbloqueie a Ilha Ginger (Bundle do Vault) → Troféus de Distante Litoral (DLC 1.6)"},
+  ]},
+];
+
+const FECTOR=[
+  {t:"Vença normalmente primeiro",d:"Complete o JotPK uma vez (mortes OK). A máquina arcade chega pelo correio — coloque-a ao lado da sua CAMA na fazenda. Isso é obrigatório para o Save Scumming funcionar."},
+  {t:"O método Sleep Scumming",d:"Jogue até vencer um nível SEM morrer. Ao entrar na próxima tela, saia imediatamente (pausa → sair sem salvar). Durma → isso salva. No dia seguinte, se morrer, saia sem salvar e recarregue. Repita por nível."},
+  {t:"Upgrades no minijogo",d:"Colete moedas agressivamente. Ordem: Sheriff Badge (cura) → Gun (disparo rápido) → Wagon Wheel (8 direções) → Bandolier (munição) → Shotgun. Tente ter 25+ moedas no Mundo 1 para comprar tudo cedo."},
+  {t:"O Boss final — Fector",d:"Quando Fector aparecer, posicione-se LIGEIRAMENTE à esquerda — seus tiros acertam ele mas os dele passam por você. Elimine-o antes que invoque inimigos. Se morrer: saia sem salvar, recarregue o save do início do dia."},
+  {t:"Sobrevivência geral",d:"Priorize Orcs > Ogres > Spikeballs. NUNCA use Nuke nem Tombstone em bosses (softlock). Dias de Sorte NÃO afetam o minijogo. Faça pausas longas — concentração é mais importante que qualquer estratégia."},
+];
+
+const UPGRADES=[
+  {fer:"Enxada Cobre",when:"Primavera Ano 1 (dia 5+)",why:"Planta 3 sementes por clique. Essencial para fazendas grandes.",c:"#78716c"},
+  {fer:"Regador Cobre",when:"Primavera Ano 1 (dia 10+)",why:"Rega 3 tiles por vez. Economiza energia imensamente.",c:"#60a5fa"},
+  {fer:"Regador Ouro",when:"Verão/Outono Ano 1",why:"Rega 18 tiles. Game-changer — libera toda a energia para minas.",c:"#fbbf24"},
+  {fer:"Regador Irídio",when:"Ano 2+",why:"Rega 24 tiles. Com sprinklers = rega toda a fazenda automática.",c:"#c084fc"},
+  {fer:"Picareta Ouro",when:"Inverno Ano 1",why:"Quebra pedras em 1 golpe. Essencial para minas profundas.",c:"#fbbf24"},
+  {fer:"Mochila Grande",when:"Primavera Ano 1 (2.000g)",why:"24 → 36 slots. Compre o mais rápido possível em Pierre.",c:"#92400e"},
+  {fer:"Celeiro",when:"Verão Ano 1 (12.000g)",why:"Necessário para troféu de animal — guarda vacas e porcos.",c:"#c2410c"},
+  {fer:"Galinheiro",when:"Primavera/Verão Ano 1",why:"Galinhas → Ovos → Maionese → bundles + amizade com Marnie.",c:"#f5f5dc"},
+  {fer:"Keg (Barril)",when:"Nível 8 de Farming",why:"Lúpulo → Hidromel = 5× o valor. Maior gerador de renda.",c:"#a16207"},
+  {fer:"Prensa de Azeite",when:"Nível 8 de Farming",why:"Trufas → Azeite de Trufa = 1.491g. Porcos produzem trufas.",c:"#4ade80"},
+];
+
+const ERROS=[
+  {e:"Completar qualquer bundle do CC antes de garantir o Save Joja",imp:"FATAL",c:"#f87171",s:"Qualquer bundle completado elimina a opção Joja PERMANENTEMENTE para aquele save. Planeje os 2 saves desde o primeiro dia de jogo."},
+  {e:"Perder a Feira do Ovo no Dia 13 de Primavera",imp:"CRÍTICO",c:"#f87171",s:"As Sementes de Morango só aparecem nesta feira. Sem elas, você espera 1 ano inteiro para completar o bundle de Verão."},
+  {e:"Não assistir Queen of Sauce regularmente",imp:"ALTO",c:"#fb923c",s:"Algumas receitas SÓ aparecem no programa (dom/quarta). Se perder um episódio, espera 2 anos completos para repetir. Consulte sempre a wiki."},
+  {e:"Esquecer o Carrinho Viajante sexta e domingo",imp:"MÉDIO",c:"#fbbf24",s:"Vende peixes raros, sementes fora de estação e itens de bundle que você pode ter perdido. Visite TODA semana sem exceção."},
+  {e:"Usar Nuke ou Tombstone em bosses do Prairie King",imp:"MÉDIO",c:"#fb923c",s:"Causa softlock permanente na fase — o boss some mas ela não termina. Evite qualquer uso de Nuke em bosses."},
+  {e:"Dar mais de 2 presentes por semana ao mesmo vilarejano",imp:"BAIXO",c:"#2dd4bf",s:"O terceiro presente não aumenta amizade, é perdido. Planeje 2 presentes/semana por pessoa com itens favoritos."},
+  {e:"Não monitorar Polikultura ao longo do jogo",imp:"MÉDIO",c:"#fbbf24",s:"São 28 cultivos diferentes, 15 de cada. Se perder a estação de um, espera 1 ano. Monitore a aba Coleção de Envio."},
+  {e:"Tentar Fector's Challenge sem treino prévio",imp:"MÉDIO",c:"#fb923c",s:"Vença o JotPK pelo menos 2-3 vezes antes de tentar o no-death run. Conhecer os padrões dos inimigos é essencial."},
+  {e:"Perder ou destruir o Medalhão da Sereia antes do casamento",imp:"MÉDIO",c:"#f472b6",s:"Sem o Medalhão não é possível se casar — e o troféu de casamento fica permanentemente bloqueado. Guarde-o com cuidado."},
+];
+
+function renderVisao(){
+  return`
+  <div class="stats-grid">${STATS.map(s=>`
+    <div class="stat-card" style="border-top-color:${s.c}">
+      <div class="stat-lbl">${s.l}</div>
+      <div class="stat-val" style="color:${s.c};font-size:${s.v.length>6?10:15}px">${s.v}</div>
+      <div class="stat-s" style="color:${s.c}88">${s.s}</div>
+    </div>`).join('')}
+  </div>
+
+  <div class="panel panel-green" style="margin-bottom:12px">
+    <div class="section-label" style="color:#4ade80"><span>DISTRIBUIÇÃO DE TROFÉUS</span></div>
+    ${[{l:"Platina",qt:1,c:"#e9d5ff",i:"💎"},{l:"Ouro",qt:4,c:"#fbbf24",i:"🥇"},{l:"Prata",qt:14,c:"#a0b8c8",i:"🥈"},{l:"Bronze",qt:31,c:"#cd7f32",i:"🥉"}].map(t=>`
+    <div class="bar-row">
+      <div class="bar-icon">${t.i}</div>
+      <div class="bar-name" style="color:${t.c}">${t.l}</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:${(t.qt/50)*100}%;background:${t.c}"></div>
+      </div>
+      <div class="bar-count" style="color:${t.c}">${t.qt}</div>
+    </div>`).join('')}
+  </div>
+
+  <div class="panel panel-amber" style="margin-bottom:12px">
+    <div class="section-label" style="color:#fbbf24"><span>ESTRATÉGIA DOS 2 SAVES</span></div>
+    <div class="saves-grid">
+      <div class="save-box" style="background:#1665341a;border-color:#166534;border-top:3px solid #4ade80">
+        <div style="font-family:var(--pixel);font-size:8px;color:#4ade80;margin-bottom:10px;letter-spacing:1px">SAVE 1 — PRINCIPAL</div>
+        ${["Complete o Centro Comunitário","Faça todos os outros troféus","Cultivos, pesca, amizades, culinária","Tente Fector's Challenge aqui","Seu save 'definitivo' da platina"].map(t=>`
+        <div class="save-item"><div class="save-bullet" style="color:#4ade80">▸</div><div style="color:#dcfce7cc;font-size:12px">${t}</div></div>`).join('')}
+      </div>
+      <div class="save-box" style="background:#92400e1a;border-color:#92400e;border-top:3px solid #fbbf24">
+        <div style="font-family:var(--pixel);font-size:8px;color:#fbbf24;margin-bottom:10px;letter-spacing:1px">SAVE 2 — JOJA</div>
+        ${["NÃO complete bundles do CC","Acumule ~155.000g (Ano 1 P3)","Compre associação Joja (5.000g)","Financie os 5 projetos Joja","Troféu aparece → pode abandonar"].map(t=>`
+        <div class="save-item"><div class="save-bullet" style="color:#fbbf24">▸</div><div style="color:#dcfce7cc;font-size:12px">${t}</div></div>`).join('')}
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-green">
+    <div class="section-label" style="color:#4ade80"><span>CULTIVOS MAIS LUCRATIVOS</span></div>
+    <div class="crops-grid">
+      ${[
+        {s:"🌱 Primavera",itens:[{n:"Morango",stars:"★★★",tip:"colheita múltipla"},{n:"Pastinaca",stars:"★★",tip:"bundle + início"},{n:"Couve",stars:"★",tip:"rápida e confiável"}],c:"#4ade80"},
+        {s:"☀️ Verão",itens:[{n:"Lúpulo",stars:"★★★",tip:"diário + Keg"},{n:"Mirtilo",stars:"★★★",tip:"múltiplas colheitas"},{n:"Melão",stars:"★★",tip:"bundle de Verão"}],c:"#fbbf24"},
+        {s:"🍂 Outono",itens:[{n:"Uva",stars:"★★★",tip:"vinho no Keg"},{n:"Arando",stars:"★★",tip:"colheita múltipla"},{n:"Abóbora",stars:"★★",tip:"bundle + lucrativa"}],c:"#fb923c"},
+        {s:"❄️ Inverno",itens:[{n:"Sem cultivos",stars:"",tip:"ao ar livre"},{n:"Pesca + mineração",stars:"",tip:"foco principal"},{n:"Estufa",stars:"★★★",tip:"Crystal Cave Fruit"}],c:"#7dd3fc"},
+      ].map(st=>`
+      <div class="crop-card" style="border-left-color:${st.c}">
+        <div class="crop-season" style="color:${st.c}">
+          <span class="crop-icon">${st.s.split(' ')[0]}</span>
+          <span>${st.s.split(' ').slice(1).join(' ')}</span>
+        </div>
+        ${st.itens.map(it=>`<div class="crop-item"><span>${it.n}</span>${it.stars?`<span class="crop-star" style="color:${st.c}">${it.stars}</span>`:''}<span style="opacity:.5;font-size:10px;margin-left:auto">${it.tip}</span></div>`).join('')}
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderMissable(){
+  return`
+  <div class="missable-block">
+    <div class="miss-head">
+      <div class="miss-level">CRÍTICO — 2 SAVES OBRIGATÓRIOS</div>
+      <div class="miss-name">Lenda Local vs Membro Joja do Ano</div>
+    </div>
+    <div class="miss-body">
+      <p class="miss-desc">Estes dois troféus são <strong>mutuamente exclusivos</strong> e representam os únicos missable verdadeiros do jogo. "Lenda Local" exige completar TODOS os pacotes do Centro Comunitário. "Membro Joja" exige comprar a associação (5.000g) e financiar os 5 projetos (~150.000g). Fazer um <strong>desfaz o outro permanentemente</strong>.</p>
+      <div class="sol-lbl">SOLUÇÕES POSSÍVEIS</div>
+      ${[
+        {l:"A",c:"#4ade80",t:"Recomendada: CC no Save 1 principal. No Save 2 (personagem novo), foque apenas em ganhar dinheiro rápido, compre a associação Joja e financie os 5 projetos. Mais seguro e direto."},
+        {l:"B",c:"#fbbf24",t:"Backup: Complete o CC no Save 1 e faça backup via PS+ ou USB. Compre a associação Joja, obtenha o troféu, restaure o backup. Arriscado se o backup falhar."},
+        {l:"C",c:"#c084fc",t:"Exploit 1.00: Reverta para a versão 1.00 (pause o update antes de abrir), use o exploit de multiplicação de itens para dinheiro infinito e complete Joja rapidamente."},
+      ].map(s=>`<div class="sol-item"><div class="sol-letter" style="color:${s.c}">${s.l}</div><div style="color:#dcfce7bb">${s.t}</div></div>`).join('')}
+      <div class="dica-box">
+        <div class="dica-icon">💡</div>
+        <div>No Save Joja você NÃO precisa fazer nada além de ganhar dinheiro. Plante Morango (Primavera), Mirtilo (Verão) e Lúpulo (Outono). Com ~155.000g você compra os 5 projetos Joja em dias consecutivos.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-pink">
+    <div class="section-label" style="color:#f472b6"><span>FESTIVAIS — NÃO PERCA ESTES</span></div>
+    <div class="festivals-grid">
+      ${[
+        {f:"Feira do Ovo",d:"Primavera 13",why:"Sementes de Morango — imperdíveis para bundles",ico:"🥚"},
+        {f:"Dança das Flores",d:"Primavera 24",why:"Troféu 'Flores da Primavera' + amizade geral",ico:"🌸"},
+        {f:"Luau",d:"Verão 11",why:"Troféu do Governador — leve item de qualidade dourada",ico:"🍹"},
+        {f:"Dança do Golfinho",d:"Verão 20",why:"Amizade com todos os vilarejos",ico:"🐬"},
+        {f:"Feira do Vale",d:"Outono 16",why:"Troféu de vitória — itens de estrela dourada",ico:"🏆"},
+        {f:"Festa dos Fantasmas",d:"Outono 27",why:"Cerejas dos Espíritos — ingrediente raro, 1x/ano",ico:"👻"},
+        {f:"Festival do Inverno",d:"Inverno 8",why:"Troféu + amizade com todas as crianças",ico:"⛸️"},
+        {f:"Noite das Estrelas",d:"Inverno 15",why:"Amizade geral + coleção de rarecrows",ico:"✨"},
+        {f:"Festa do Inverno",d:"Inverno 25",why:"Troca de presentes + rarecrow único",ico:"🎁"},
+      ].map(fv=>`
+      <div class="fv-item">
+        <div class="fv-ico">${fv.ico}</div>
+        <div class="fv-info">
+          <div class="fv-name">${fv.f}</div>
+          <div class="fv-date">${fv.d}</div>
+          <div class="fv-why">${fv.why}</div>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+function renderRoteiro(){
+  const state={};
+  return`
+  <p class="note">Foco no Save 1 (Centro Comunitário). O Save 2 (Joja) pode ser feito em paralelo — priorize fazer dinheiro rápido lá e ignore quase tudo mais.</p>
+  <div class="acc-list" id="rot-list">${ANOS.map((a,ai)=>`
+    <div class="rot-item" style="border-left-color:${a.cor}" id="rot-wrap-${ai}">
+      <button class="rot-btn" onclick="toggleRot(${ai})">
+        <div class="rot-season-icon">${a.ico}</div>
+        <div style="flex:1">
+          <div class="rot-season-name" style="color:${a.cor}">${a.ano}</div>
+          <div class="rot-meta">${a.meta}</div>
+        </div>
+        <div class="rot-count">${a.dias.length} marcos</div>
+        <div class="acc-arrow" id="rot-arrow-${ai}">▼</div>
+      </button>
+      <div id="rot-body-${ai}" style="display:none">
+        <div class="rot-body">${a.dias.map(d=>`
+          <div class="rot-row">
+            <div class="rot-day" style="background:${a.cor}22;border:1px solid ${a.cor}44;color:${a.cor}">${d.d}</div>
+            <div class="rot-action">${d.a}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+    </div>`).join('')}
+  </div>`;
+}
+
+function renderTrofeus(){
+  return`
+  <p class="note">Os troféus que exigem mais atenção e planejamento. A maioria dos outros 40 vêm naturalmente ao jogar — apenas estes precisam de foco dedicado.</p>
+  <div class="acc-list" id="trof-list">${TROFEUS.map((t,i)=>`
+    <div class="acc-item" style="border-left:3px solid ${t.tagC}" id="trof-wrap-${i}">
+      <button class="acc-btn" onclick="toggleTrof(${i})">
+        <div class="trophy-row">
+          <div class="trophy-ico">${{platinum:"💎",gold:"🥇",silver:"🥈",bronze:"🥉"}[t.tipo]}</div>
+          <div class="trophy-body">
+            <div class="trophy-name">${t.nome}</div>
+            <div class="trophy-sub">${t.ptbr}</div>
+          </div>
+          <div class="diff" style="color:${t.tagC}">${t.dif}</div>
+          <div class="acc-tag" style="color:${t.tagC};border-color:${t.tagC}">${t.tag}</div>
+          <div class="acc-arrow" id="trof-arrow-${i}">▼</div>
+        </div>
+      </button>
+      <div id="trof-body-${i}" class="acc-body" style="display:none">${t.desc}</div>
+    </div>`).join('')}
+  </div>
+  <div style="margin-top:12px">
+    <div class="section-label" style="color:#7dd3fc"><span>REFERÊNCIAS EXTERNAS</span></div>
+    <div class="refs-row">
+      <a class="ref-link" href="https://psnprofiles.com/guide/7708-stardew-valley-trophy-guide">🔗 PSNProfiles — Guia Completo</a>
+      <a class="ref-link" href="https://stardewvalleywiki.com/Achievements">🔗 Stardew Valley Wiki</a>
+      <a class="ref-link" href="https://psnprofiles.com/guide/22094-stardew-valley-16-update-dlc-trophy-guide">🔗 PSNProfiles — DLC 1.6</a>
+    </div>
+  </div>`;
+}
+
+function renderFector(){
+  return`
+  <div class="fector-hero">
+    <div class="fector-title">🕹 DESAFIO DE FECTOR — O TROFÉU MAIS DIFÍCIL DA PLATINA</div>
+    <p class="fector-desc">Vença o Journey of the Prairie King <strong>sem morrer uma única vez</strong>. Com o método Sleep Scumming (disponível desde o patch 1.5), o troféu passou de quase impossível para desafiador mas factível. A máquina arcade chega pelo correio após vencer normalmente — coloque-a <strong>ao lado da cama</strong> na fazenda.</p>
+  </div>
+  <div class="acc-list" id="fec-list" style="margin-bottom:14px">${FECTOR.map((f,fi)=>`
+    <div class="acc-item" style="border-left:3px solid #f87171" id="fec-wrap-${fi}">
+      <button class="acc-btn" onclick="toggleFec(${fi})">
+        <div class="acc-num" style="color:#f87171;border-color:#f87171">${fi+1}</div>
+        <div style="flex:1">
+          <div class="acc-title">${f.t}</div>
+          <div class="acc-sub">Passo ${fi+1} de ${FECTOR.length}</div>
+        </div>
+        <div class="acc-arrow" id="fec-arrow-${fi}">▼</div>
+      </button>
+      <div id="fec-body-${fi}" class="acc-body" style="display:none;background:#7f1d1d1a">${f.d}</div>
+    </div>`).join('')}
+  </div>
+  <div class="panel panel-amber">
+    <div class="section-label" style="color:#fb923c"><span>UPGRADES NO MINIJOGO — ORDEM CERTA</span></div>
+    <div class="upg-grid">${[
+      {n:"1º Sheriff Badge",d:"Recupera ½ coração. O mais importante — sobrevivência.",c:"#f87171"},
+      {n:"2º Gun",d:"Dispara mais rápido. Essencial no Mundo 2+.",c:"#fb923c"},
+      {n:"3º Wagon Wheel",d:"Disparo em 8 direções. Game-changer no controle de multidão.",c:"#fbbf24"},
+      {n:"4º Bandolier",d:"Mais munição. Complementa Gun e Wheel.",c:"#4ade80"},
+      {n:"5º Shotgun",d:"Alto dano. Ideal para bosses.",c:"#7dd3fc"},
+      {n:"6º Coffee",d:"Velocidade temporária. Reservar para emergências.",c:"#c084fc"},
+    ].map(u=>`
+    <div class="upg-card" style="border-top-color:${u.c}">
+      <div class="upg-name" style="color:${u.c}">${u.n}</div>
+      <div class="upg-why">${u.d}</div>
+    </div>`).join('')}
+    </div>
+    <div style="background:#7f1d1d22;border:1px solid #7f1d1d;padding:10px 12px;font-size:12px">
+      <span style="color:#f87171;font-weight:500">⚠ SOFTLOCK PERMANENTE: </span>
+      <span style="color:#dcfce7bb">Nunca use Nuke ou Tombstone no Boss 1 ou em Fector. O boss desaparece mas a fase não termina — você fica preso para sempre.</span>
+    </div>
+  </div>`;
+}
+
+function renderUpgrades(){
+  return`
+  <p class="note">Prioridade de ferramentas e construções. Upgrades errados desperdiçam dias preciosos que nunca voltam.</p>
+  <div class="acc-list" id="upg-list" style="margin-bottom:14px">${UPGRADES.map((u,i)=>`
+    <div class="acc-item" style="border-left:3px solid ${u.c}" id="upg-wrap-${i}">
+      <button class="acc-btn" onclick="toggleUpg(${i})">
+        <div class="acc-num" style="color:${u.c};border-color:${u.c}">${i+1}</div>
+        <div style="flex:1">
+          <div class="acc-title">${u.fer}</div>
+          <div class="acc-sub">${u.when}</div>
+        </div>
+        <div class="acc-arrow" id="upg-arrow-${i}">▼</div>
+      </button>
+      <div id="upg-body-${i}" class="acc-body" style="display:none;border-left:3px solid ${u.c}66">
+        <span style="color:#4ade80">✓</span> ${u.why}
+      </div>
+    </div>`).join('')}
+  </div>
+  <div class="panel panel-amber">
+    <div class="section-label" style="color:#fbbf24"><span>DICAS DE ECONOMIA</span></div>
+    ${[
+      "Venda TUDO que não for bundle ou coleção — guarde apenas o estritamente necessário.",
+      "Lúpulo em Kegs é o maior gerador de renda: Hidromel de Lúpulo = 500g+ com ciclo de apenas 1 dia.",
+      "Porcos produzem Trufas diariamente — em Prensas de Azeite valem 1.491g cada. Compre porcos cedo.",
+      "Frutas de Estrelinha em Kegs viram Vinho Estelar (6.300g na qualidade irídio). Dos itens mais valiosos.",
+      "Verifique o Carrinho Viajante sexta e domingo — vende Irídio, peixes raros e itens de bundle perdidos.",
+    ].map(d=>`<div class="eco-item"><div class="eco-bullet">◆</div><div style="color:#dcfce7cc">${d}</div></div>`).join('')}
+  </div>`;
+}
+
+function renderErros(){
+  return`
+  <p class="note">Erros que forçam uma nova run ou atrasam a platina em anos inteiros de jogo — evite a todo custo.</p>
+  <div id="err-list">${ERROS.map((e,i)=>`
+    <div class="err-item" style="border-left-color:${e.c}" id="err-wrap-${i}">
+      <button class="err-btn" onclick="toggleErr(${i})">
+        <div class="err-name">${e.e}</div>
+        <div class="err-imp" style="color:${e.c};border-color:${e.c}">${e.imp}</div>
+        <div class="acc-arrow" id="err-arrow-${i}">▼</div>
+      </button>
+      <div id="err-body-${i}" class="err-body">
+        <span style="color:#4ade80;font-size:14px;flex-shrink:0">✓</span>
+        <span style="color:#4ade80bb">${e.s}</span>
+      </div>
+    </div>`).join('')}
+  </div>`;
+}
+
+const renders={visao:renderVisao,missable:renderMissable,roteiro:renderRoteiro,trofeus:renderTrofeus,fector:renderFector,upgrades:renderUpgrades,erros:renderErros};
+let currentTab="visao";
+
+function setTab(tab){
+  currentTab=tab;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.tab===tab));
+  document.getElementById("content").innerHTML=renders[tab]();
+}
+
+document.getElementById("tabs").addEventListener("click",e=>{
+  const b=e.target.closest(".tab");
+  if(b)setTab(b.dataset.tab);
+});
+
+function toggleAcc(prefix,i){
+  const body=document.getElementById(prefix+"-body-"+i);
+  const arrow=document.getElementById(prefix+"-arrow-"+i);
+  if(!body)return;
+  const open=body.style.display!=="none"&&body.style.display!=="";
+  body.style.display=open?"none":"block";
+  if(arrow)arrow.textContent=open?"▼":"▲";
+}
+
+window.toggleRot=(i)=>toggleAcc("rot",i);
+window.toggleTrof=(i)=>toggleAcc("trof",i);
+window.toggleFec=(i)=>toggleAcc("fec",i);
+window.toggleUpg=(i)=>toggleAcc("upg",i);
+window.toggleErr=(i)=>{
+  const body=document.getElementById("err-body-"+i);
+  const arrow=document.getElementById("err-arrow-"+i);
+  if(!body)return;
+  const open=body.classList.contains("open");
+  body.classList.toggle("open",!open);
+  body.style.display=open?"none":"flex";
+  if(arrow)arrow.textContent=open?"▼":"▲";
+};
+
+const stars=document.getElementById("stars");
+if(stars){
+  for(let i=0;i<40;i++){
+    const s=document.createElement("div");
+    s.className="star";
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.opacity=(0.3+Math.random()*0.7).toFixed(2);
+    stars.appendChild(s);
+  }
+}
+
+setTab("visao");
+</script>
+</html>
