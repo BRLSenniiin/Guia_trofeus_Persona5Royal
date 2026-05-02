@@ -635,7 +635,20 @@
   <div id="sec-confidants" class="section active">
     <div class="alert-box">
       <p>⚠️ PRAZO LIMITE — NÃO FALHE NESSES:</p>
-      <p>• <strong>MARUKI (Consultant)</strong> → Rank 9 antes de <strong>11/18</strong> — Final Verdadeiro! &nbsp;|&nbsp; • <strong>AKECHI (Justice)</strong> → Rank 8 antes de <strong>11/17</strong> &nbsp;|&nbsp; • <strong>KASUMI (Faith)</strong> → Rank 5 antes de <strong>12/22</strong> &nbsp;|&nbsp; • <strong>C&amp;J (Strength)</strong> → Rank 10 antes de <strong>12/24</strong></p>
+      <p>• <strong>MARUKI (The Councillor)</strong> → Rank 9 antes de <strong>11/18</strong> — Final Verdadeiro! &nbsp;|&nbsp; • <strong>AKECHI (Justice)</strong> → Rank 8 antes de <strong>11/17</strong> &nbsp;|&nbsp; • <strong>KASUMI (Faith)</strong> → Rank 5 antes de <strong>12/22</strong> &nbsp;|&nbsp; • <strong>C&amp;J (Strength)</strong> → Rank 10 antes de <strong>12/24</strong></p>
+      <p>⚠️ HÁ ALGUMAS CONFIDANTS QUE PODEM FICAR TRANCADAS DEVIDO OS STATS SOCIAIS, SÃO ELAS:<br><br>
+      - TAE TAKEMI (DEATH): RANK 2 (GUTS LVL 2)/RANK 8 (CHARM LVL 4)<br> 
+      - MUNEHISA IWAI (HANGED MAN): RANK 1 (GUTS LVL 4)/RANK 8 (GUTS LVL5)<br>
+      - SADAYO KAWAKAMI (TEMPERANCE): RANK 1 (GUTS LVL 3)<br>
+      - MAKOTO NIIJIMA (PRIESTESS): INICIAR CONFIDANT (KNOWLEDGE LVL 3)/ RANK 6 (CHARM LVL5)<br>
+      - FUTABA (HERMIT): RANK 2 (KINDNESS LVL 4)<br>
+      - HARU OKUMURA (EMPRESS): PROFICIENCY LVL 5<br>
+      - YUSUKE (EMPEROR): RANK 6 (PROFICIENCY LVL 4)<br>
+      - ANN (LOVERS): RANK 2 (KINDNESS LVL 2)<br>
+      - SOJIRO (HIEROPHANT): RANK 7 (KINDNESS LVL 5)<br>
+      - HIFUMI (STAR): RANK 1 (CHARM LVL 3)/RANK 08 (KNOWLEDGE LVL 5)<br>
+      - AKECHI (JUSTICE): RANK 3 (CHARM LVL 3)/RANK 7 (KNOWLEDGE LVL 4) </p>
+
     </div>
 <!-- IMAGEM ESQUERDA -->
   <div class="side-img left">
@@ -1544,21 +1557,21 @@ const P5R_DATA = {
     { id:"hierophant", arcana:"V · THE HIEROPHANT", name:"Sojiro Sakura", persona:"Kohryu", location:"LeBlanc (Yongen-Jaya)", availability:"Seg, Ter, Qua, Sex, Sáb, Dom — Tarde (disponível com chuva também)", deadline:null, unlock:"5/4", gifts:["Decorative Kakejiku (¥2.800)","Daruma Doll (¥2.500)","Bonsai (¥3.000)"], bestGifts:"Bonsai (+3), Decorative Kakejiku (+3)", likes:"Objetos tradicionais japoneses", tips:"Precisa de Kindness nível 2 para iniciar. Uma das prioridades — habilidade de recuperação de SP com café/curry é ESSENCIAL para Palaces. Sojiro ensina a fazer Coffee e Curry.", romance:false, priority:"★★★★★", color:"#795548", abilities:[{rank:1,name:"Coffee Master",desc:"Sojiro te ensina a fazer café que recupera SP"},{rank:3,name:"Leblanc Curry",desc:"Sojiro te ensina Curry que recupera mais SP"},{rank:5,name:"Curry Tactics",desc:"Uso de Curry em campo restaura SP da equipe"},{rank:7,name:"Coffee Basics",desc:"Café pode ser feito no Leblanc com maior efeito"},{rank:10,name:"Leblanc Curry II",desc:"Versão melhorada do Curry. Desbloqueia Kohryu"}]},
     { id:"lovers", arcana:"VI · THE LOVERS", name:"Ann Tamaki", persona:"Carmen → Hecate", location:"Shibuya (próximo ao cruzamento)", availability:"Seg, Qua, Sex — Tarde", deadline:null, unlock:"4/23 (após Palace 1)", gifts:["Lip Rouge (¥2.800)","Muffler (¥3.800)","Sakura Fan (¥2.400)"], bestGifts:"Lip Rouge (+3) tem diálogo especial, Muffler (+3)", likes:"Moda, cosméticos e presentes femininos", tips:"Primeira Confidant de party disponível. Leve Persona do Arcano Lovers. Habilidade Sexy Technique é útil para negociações. Pode ser namorada.", romance:true, priority:"★★★★★", color:"#e74c3c", abilities:[{rank:1,name:"Baton Pass",desc:"Passa turno após crítico"},{rank:2,name:"Sexy Technique",desc:"Chance de seduzir Sombra e encerrar batalha"},{rank:4,name:"Harisen Recovery",desc:"Cura status após crítico"},{rank:6,name:"Crocodile Tears",desc:"Aumenta chance de Sombra desistir de fugir"},{rank:8,name:"Inviolability",desc:"Protege aliados de golpe fatal"},{rank:10,name:"Endure",desc:"Sobrevive com 1HP. Desbloqueia Hecate"}]},
     { id:"chariot", arcana:"VII · THE CHARIOT", name:"Ryuji Sakamoto", persona:"Captain Kidd → Seiten Taisei", location:"Shibuya (próximo ao centro comercial)", availability:"Seg, Ter, Qua, Sex, Dom — Tarde", deadline:null, unlock:"4/23 (após Palace 1)", gifts:["Protein (¥1.500)","Capsule Toy (¥900)","Sneakers (¥2.800)"], bestGifts:"Sneakers (+3), Protein (+2)", likes:"Esportes, suplementos e objetos esportivos", tips:"Leve Persona do Arcano Chariot. Rank 7 é CRUCIAL — concede Insta-kill (Takemi-down) em Sombras fracas, economizando enorme quantidade de tempo em Mementos. Priorize!", romance:false, priority:"★★★★★", color:"#e67e22", abilities:[{rank:1,name:"Baton Pass",desc:"Passa turno após crítico"},{rank:2,name:"Bullet Hail",desc:"Ryuji atira em todos os inimigos em surpresa"},{rank:4,name:"Harisen Recovery",desc:"Cura status após crítico"},{rank:6,name:"Insta-kill",desc:"Elimina automaticamente Sombras mais fracas"},{rank:8,name:"Inviolability",desc:"Protege aliados de golpe fatal"},{rank:10,name:"Endure",desc:"Sobrevive com 1HP. Desbloqueia Seiten Taisei"}]},
-    { id:"justice", arcana:"VIII · JUSTICE", name:"Goro Akechi", persona:"Robin Hood → Loki", location:"Kichijoji (área de café) / Maid Café em Akihabara", availability:"Seg, Ter, Qua, Sex, Sáb — Tarde", deadline:"⚠️ URGENTE: Rank 8 até 11/17 para True Ending", unlock:"6/10", gifts:["Artisan's Sake (¥1.500)","Mystery Meat (¥2.000)","Fancy Bacon (¥2.800)"], bestGifts:"Fancy Bacon (+3), Artisan's Sake (+3)", likes:"Comidas apimentadas e sofisticadas", tips:"DEADLINE CRÍTICO: você DEVE alcançar Rank 8 ANTES de 11/17 para o True Ending. Sem Rank 8 = sem 3º semestre = sem platina sem NG+. Leve Persona do Arcano Justice.", romance:false, priority:"★★★★★", color:"#c0392b", abilities:[{rank:1,name:"Baton Pass",desc:"Passa turno após crítico"},{rank:2,name:"Follow Up",desc:"Chance de atacar após você abater um inimigo"},{rank:4,name:"Harisen Recovery",desc:"Cura status após crítico"},{rank:6,name:"Endure",desc:"Sobrevive com 1HP"},{rank:8,name:"Inviolability",desc:"Protege aliados de golpe fatal"},{rank:10,name:"Second Awakening (NG+)",desc:"Desbloqueia Loki. Apenas em NG+"}]},
+    { id:"justice", arcana:"VIII · THE JUSTICE", name:"Goro Akechi", persona:"Robin Hood → Loki", location:"Kichijoji (área de café) / Maid Café em Akihabara", availability:"Seg, Ter, Qua, Sex, Sáb — Tarde", deadline:"⚠️ URGENTE: Rank 8 até 11/17 para True Ending", unlock:"6/10", gifts:["Artisan's Sake (¥1.500)","Mystery Meat (¥2.000)","Fancy Bacon (¥2.800)"], bestGifts:"Fancy Bacon (+3), Artisan's Sake (+3)", likes:"Comidas apimentadas e sofisticadas", tips:"DEADLINE CRÍTICO: você DEVE alcançar Rank 8 ANTES de 11/17 para o True Ending. Sem Rank 8 = sem 3º semestre = sem platina sem NG+. Leve Persona do Arcano Justice.", romance:false, priority:"★★★★★", color:"#c0392b", abilities:[{rank:1,name:"Baton Pass",desc:"Passa turno após crítico"},{rank:2,name:"Follow Up",desc:"Chance de atacar após você abater um inimigo"},{rank:4,name:"Harisen Recovery",desc:"Cura status após crítico"},{rank:6,name:"Endure",desc:"Sobrevive com 1HP"},{rank:8,name:"Inviolability",desc:"Protege aliados de golpe fatal"},{rank:10,name:"Second Awakening (NG+)",desc:"Desbloqueia Loki. Apenas em NG+"}]},
     { id:"hermit", arcana:"IX · THE HERMIT", name:"Futaba Sakura", persona:"Necronomicon → Prometheus", location:"LeBlanc / Akihabara", availability:"Seg, Ter, Qua, Qui — Tarde (disponível com chuva também)", deadline:null, unlock:"8/31 (após Palace 4)", gifts:["Uji Matcha Flan (¥2.400)","Black Rock Shooter Figure (¥2.800)","Glass Vase (¥2.800)"], bestGifts:"Figura de anime (+3 com diálogo único), Uji Matcha Flan (+2)", likes:"Produtos de cultura otaku e doces", tips:"Desbloqueada apenas após Palace 4. Leve Persona do Arcano Hermit. Navigator Assists são muito úteis. Pode ser namorada.", romance:true, priority:"★★★★☆", color:"#27ae60", abilities:[{rank:1,name:"Moral Support",desc:"Chance de curar HP de aliados gratuitamente"},{rank:2,name:"Mementos Scan",desc:"Futaba revela o mapa de Mementos"},{rank:4,name:"Active Support",desc:"Chance de revelar e atacar inimigos"},{rank:6,name:"Final Guard",desc:"Futaba protege aliados de golpe fatal"},{rank:8,name:"Treasure Reboot",desc:"Reavalia Treasure Demons escapos"},{rank:10,name:"Futaba's Return",desc:"Chance de devolver itens gastos. Desbloqueia Prometheus"}]},
-    { id:"fortune", arcana:"X · FORTUNE", name:"Chihaya Mifune", persona:"Atropos", location:"Shinjuku (próximo ao teleférico)", availability:"Seg, Ter, Qua, Sex, Dom — Tarde e Noite", deadline:null, unlock:"6/22 (pague ¥100.000 — esse dinheiro é reembolsado no Rank 2)", gifts:["Decorative Kakejiku (¥2.800)","Sakura Fan (¥2.400)","Small Incense (¥3.200)"], bestGifts:"Small Incense (+3), Sakura Fan (+2)", likes:"Itens espirituais e tradicionais japoneses", tips:"Pague ¥100.000 para iniciar — você recebe o dinheiro de volta no Rank 2. Habilidade Money Reading (Rank 3) aumenta dinheiro de batalha. Affinity Reading (Rank 7) aumenta pontos com outros Confidants. ESSENCIAL para otimizar seu tempo.", romance:true, priority:"★★★★★", color:"#f39c12", abilities:[{rank:1,name:"Luck Reading",desc:"Aumenta pontos de stat ganhos por uma sessão"},{rank:3,name:"Money Reading",desc:"Aumenta dinheiro ganho em batalhas"},{rank:5,name:"Fate Reading",desc:"Pré-visualiza algumas habilidades de Confidants"},{rank:7,name:"Affinity Reading",desc:"Aumenta pontos de um Confidant específico. MUITO ÚTIL!"},{rank:10,name:"Special Fate Reading",desc:"Vê TODAS as habilidades. Desbloqueia Atropos"}]},
-    { id:"strength", arcana:"XI · STRENGTH", name:"Caroline & Justine (As Gêmeas)", persona:"Kalanemi (missão de fusão específica)", location:"Velvet Room", availability:"A qualquer momento no Velvet Room — não gasta tempo do dia", deadline:"10 fusões especiais até 12/24", unlock:"5/18", gifts:[], bestGifts:"Não aceita presentes", likes:"Completar as 10 fusões especiais que elas pedem", tips:"ÚNICO Confidant que avança por fusões especiais, NÃO por pontos. 10 fusões específicas devem ser realizadas. As cenas não gastam tempo do dia — podem ser feitas de uma vez ao final! Use uma calculadora de fusão online. Rank 10 até 12/24.", romance:false, priority:"★★★★★", color:"#1abc9c", abilities:[{rank:1,name:"Group Guillotine",desc:"Fusão de 3 Personas simultaneamente"},{rank:3,name:"Lockdown",desc:"Persona aprende resistência a um elemento"},{rank:5,name:"Special Treatment",desc:"Fusão de Personas de nível acima do seu"},{rank:7,name:"Guillotine Booster",desc:"Fusão de 4+ Personas de uma vez"},{rank:10,name:"VIP Treatment",desc:"Custo reduzido no Special Treatment. Desbloqueia Kalanemi + Luta secreta"}]},
+    { id:"fortune", arcana:"X · THE FORTUNE", name:"Chihaya Mifune", persona:"Atropos", location:"Shinjuku (próximo ao teleférico)", availability:"Seg, Ter, Qua, Sex, Dom — Tarde e Noite", deadline:null, unlock:"6/22 (pague ¥100.000 — esse dinheiro é reembolsado no Rank 2)", gifts:["Decorative Kakejiku (¥2.800)","Sakura Fan (¥2.400)","Small Incense (¥3.200)"], bestGifts:"Small Incense (+3), Sakura Fan (+2)", likes:"Itens espirituais e tradicionais japoneses", tips:"Pague ¥100.000 para iniciar — você recebe o dinheiro de volta no Rank 2. Habilidade Money Reading (Rank 3) aumenta dinheiro de batalha. Affinity Reading (Rank 7) aumenta pontos com outros Confidants. ESSENCIAL para otimizar seu tempo.", romance:true, priority:"★★★★★", color:"#f39c12", abilities:[{rank:1,name:"Luck Reading",desc:"Aumenta pontos de stat ganhos por uma sessão"},{rank:3,name:"Money Reading",desc:"Aumenta dinheiro ganho em batalhas"},{rank:5,name:"Fate Reading",desc:"Pré-visualiza algumas habilidades de Confidants"},{rank:7,name:"Affinity Reading",desc:"Aumenta pontos de um Confidant específico. MUITO ÚTIL!"},{rank:10,name:"Special Fate Reading",desc:"Vê TODAS as habilidades. Desbloqueia Atropos"}]},
+    { id:"strength", arcana:"XI · THE STRENGTH", name:"Caroline & Justine (As Gêmeas)", persona:"Kalanemi (missão de fusão específica)", location:"Velvet Room", availability:"A qualquer momento no Velvet Room — não gasta tempo do dia", deadline:"10 fusões especiais até 12/24", unlock:"5/18", gifts:[], bestGifts:"Não aceita presentes", likes:"Completar as 10 fusões especiais que elas pedem", tips:"ÚNICO Confidant que avança por fusões especiais, NÃO por pontos. 10 fusões específicas devem ser realizadas. As cenas não gastam tempo do dia — podem ser feitas de uma vez ao final! Use uma calculadora de fusão online. Rank 10 até 12/24.", romance:false, priority:"★★★★★", color:"#1abc9c", abilities:[{rank:1,name:"Group Guillotine",desc:"Fusão de 3 Personas simultaneamente"},{rank:3,name:"Lockdown",desc:"Persona aprende resistência a um elemento"},{rank:5,name:"Special Treatment",desc:"Fusão de Personas de nível acima do seu"},{rank:7,name:"Guillotine Booster",desc:"Fusão de 4+ Personas de uma vez"},{rank:10,name:"VIP Treatment",desc:"Custo reduzido no Special Treatment. Desbloqueia Kalanemi + Luta secreta"}]},
     { id:"hangedman", arcana:"XII · THE HANGED MAN", name:"Munehisa Iwai", persona:"Vishnu", location:"Untouchable (loja de armas), Shibuya", availability:"Seg, Ter, Qua, Sex, Dom — Noite", deadline:null, unlock:"5/6 (requer Guts nível 3 — Dauntless)", gifts:["Airsoft Gun (¥1.800)","Black Rock Shooter Figure (¥2.800)","Protein (¥1.500)"], bestGifts:"Airsoft Gun (+3 com diálogo especial), Black Rock Shooter Figure (+2)", likes:"Itens militares, esportivos e brinquedos de ação", tips:"Requer Guts nível 3 para iniciar. Aumenta opções de customização de armas. Rank 5 é muito útil — permite comprar armas exclusivas no Untouchable.", romance:false, priority:"★★★☆☆", color:"#607d8b", abilities:[{rank:1,name:"Starter Pack",desc:"Desbloqueia pedidos básicos de customização de arma"},{rank:3,name:"Mod User",desc:"Armas têm opções de upgrade extra"},{rank:5,name:"Tactical Genius",desc:"Acessa armas exclusivas na loja"},{rank:7,name:"Arms Deal",desc:"Desbloqueia armamentos especiais importados"},{rank:10,name:"Play Dirty",desc:"Chance de ataque duplo em surpresa. Desbloqueia Vishnu"}]},
-    { id:"death", arcana:"XIII · DEATH", name:"Tae Takemi", persona:"Yog-Sothoth", location:"Clínica Takemi, Yongen-Jaya", availability:"Seg, Ter, Qua, Qui, Sex, Sáb — Tarde", deadline:null, unlock:"4/18", gifts:["Mini Cactus (¥800)","Silver Bangle (¥5.800)","Gothic Choker (¥2.400)"], bestGifts:"Mini Cactus (+2 — mais barato!), Gothic Choker (+2). Silver Bangle não dê para ela — é caro e ela não gosta tanto", likes:"Itens alternativos, góticos e de subcultura", tips:"UMA DAS PRIMEIRAS PRIORIDADES. Rank 7 dá 30% de desconto nos itens — economiza MUITO dinheiro. Rank 5 desbloqueia os melhores itens de cura do jogo. Pode ser namorada.", romance:true, priority:"★★★★★", color:"#2c3e50", abilities:[{rank:1,name:"Rejuvenation",desc:"Itens de cura melhorados disponíveis na clínica"},{rank:3,name:"Sterilization",desc:"Desbloqueia itens que curam status ailments"},{rank:5,name:"Immunization",desc:"Itens poderosos de healing disponíveis"},{rank:7,name:"Clinical Precision",desc:"30% de desconto em TODOS os itens da clínica"},{rank:10,name:"Resuscitation",desc:"Revive aliados durante batalha com item. Desbloqueia Yog-Sothoth"}]},
-    { id:"temperance", arcana:"XIV · TEMPERANCE", name:"Sadayo Kawakami", persona:"Kikuri-Hime", location:"Escola (professora) / ligue pelo celular", availability:"Seg, Ter, Qua, Sex, Sáb — Tarde", deadline:null, unlock:"5/24 (requer Charm nível 3)", gifts:["Maid Outfit Miniature (¥3.200)","Golden Brush Set (¥2.800)","Castella (¥1.500)"], bestGifts:"Maid Outfit Miniature (+3 com diálogo especial), Golden Brush Set (+2)", likes:"Itens relacionados ao trabalho e doces", tips:"Requer Charm nível 3. Rank 10 é FENOMENAL — permite realizar atividades à noite que normalmente ocupariam o período da tarde (trabalho de artesanato, etc). Uma das melhores Confidants para otimização de tempo. Pode ser namorada.", romance:true, priority:"★★★★★", color:"#16a085", abilities:[{rank:1,name:"Slack Off",desc:"Pode dormir na aula para recuperar SP"},{rank:3,name:"Housekeeping",desc:"Kawakami limpa o quarto/lava roupa gratuitamente à noite"},{rank:5,name:"Massage",desc:"Recupera SP ao dormir após batalha em Dungeon"},{rank:7,name:"Free Time",desc:"Kawakami cobre aulas, dando tempo livre em escola"},{rank:10,name:"Special Massage",desc:"Recupera HP/SP completamente ao dormir. Desbloqueia Kikuri-Hime"}]},
+    { id:"death", arcana:"XIII · THE DEATH", name:"Tae Takemi", persona:"Yog-Sothoth", location:"Clínica Takemi, Yongen-Jaya", availability:"Seg, Ter, Qua, Qui, Sex, Sáb — Tarde", deadline:null, unlock:"4/18", gifts:["Mini Cactus (¥800)","Silver Bangle (¥5.800)","Gothic Choker (¥2.400)"], bestGifts:"Mini Cactus (+2 — mais barato!), Gothic Choker (+2). Silver Bangle não dê para ela — é caro e ela não gosta tanto", likes:"Itens alternativos, góticos e de subcultura", tips:"UMA DAS PRIMEIRAS PRIORIDADES. Rank 7 dá 30% de desconto nos itens — economiza MUITO dinheiro. Rank 5 desbloqueia os melhores itens de cura do jogo. Pode ser namorada.", romance:true, priority:"★★★★★", color:"#2c3e50", abilities:[{rank:1,name:"Rejuvenation",desc:"Itens de cura melhorados disponíveis na clínica"},{rank:3,name:"Sterilization",desc:"Desbloqueia itens que curam status ailments"},{rank:5,name:"Immunization",desc:"Itens poderosos de healing disponíveis"},{rank:7,name:"Clinical Precision",desc:"30% de desconto em TODOS os itens da clínica"},{rank:10,name:"Resuscitation",desc:"Revive aliados durante batalha com item. Desbloqueia Yog-Sothoth"}]},
+    { id:"temperance", arcana:"XIV · THE TEMPERANCE", name:"Sadayo Kawakami", persona:"Kikuri-Hime", location:"Escola (professora) / ligue pelo celular", availability:"Seg, Ter, Qua, Sex, Sáb — Tarde", deadline:null, unlock:"5/24 (requer Charm nível 3)", gifts:["Maid Outfit Miniature (¥3.200)","Golden Brush Set (¥2.800)","Castella (¥1.500)"], bestGifts:"Maid Outfit Miniature (+3 com diálogo especial), Golden Brush Set (+2)", likes:"Itens relacionados ao trabalho e doces", tips:"Requer Charm nível 3. Rank 10 é FENOMENAL — permite realizar atividades à noite que normalmente ocupariam o período da tarde (trabalho de artesanato, etc). Uma das melhores Confidants para otimização de tempo. Pode ser namorada.", romance:true, priority:"★★★★★", color:"#16a085", abilities:[{rank:1,name:"Slack Off",desc:"Pode dormir na aula para recuperar SP"},{rank:3,name:"Housekeeping",desc:"Kawakami limpa o quarto/lava roupa gratuitamente à noite"},{rank:5,name:"Massage",desc:"Recupera SP ao dormir após batalha em Dungeon"},{rank:7,name:"Free Time",desc:"Kawakami cobre aulas, dando tempo livre em escola"},{rank:10,name:"Special Massage",desc:"Recupera HP/SP completamente ao dormir. Desbloqueia Kikuri-Hime"}]},
     { id:"devil", arcana:"XV · THE DEVIL", name:"Ichiko Ohya", persona:"Dakini", location:"Bar Crossroads, Shinjuku", availability:"Seg, Ter, Qua, Qui, Sex — Noite", deadline:null, unlock:"6/23 (requer Charm nível 3)", gifts:["Uji Matcha Flan (¥2.400)","Artisan's Sake (¥1.500)","Lip Rouge (¥2.800)"], bestGifts:"Lip Rouge (+3 com diálogo especial), Uji Matcha Flan (+2)", likes:"Bebidas, cosméticos e guloseimas", tips:"Uma das Confidants menos essenciais em termos de habilidade (reduz Alarme da polícia nos Palaces). Porém fácil de maxar e o Alarm é cada vez menos relevante. Pode ser namorada.", romance:true, priority:"★★☆☆☆", color:"#8e44ad", abilities:[{rank:1,name:"Smooth Talk",desc:"Chegar ao Palace não dispara Alarme inicial"},{rank:3,name:"Rumor-Filled Scoop",desc:"Reduz nível do Alarme do Palace"},{rank:5,name:"Harisen Recovery",desc:"Cura status aliados após crítico"},{rank:7,name:"Shocking Scoop",desc:"Esvazia completamente o Alarme"},{rank:10,name:"Legendary Scoop",desc:"Alarme não aumenta com ações suspeitas. Desbloqueia Dakini"}]},
     { id:"tower", arcana:"XVI · THE TOWER", name:"Shinya Oda", persona:"Moloch", location:"Arcades, Akihabara", availability:"Seg, Ter, Qua, Qui — Tarde", deadline:null, unlock:"9/4 (requer Kindness nível 4 + completar requisito)", gifts:["Retro Game (¥2.000)","Capsule Toy (¥900)","Airsoft Gun (¥1.800)"], bestGifts:"Retro Game (+3 com diálogo especial), Airsoft Gun (+2)", likes:"Videogames e brinquedos", tips:"Requer Kindness nível 4 para iniciar. A habilidade Down Shot (Rank 1) é MUITO poderosa — derruba qualquer inimigo não-chefe gastando todas as balas. Ótimo para capturar Treasure Demons.", romance:false, priority:"★★★☆☆", color:"#e74c3c", abilities:[{rank:1,name:"Down Shot",desc:"Gasta todas as balas para derrubar QUALQUER inimigo"},{rank:3,name:"Warning Shot",desc:"Down Shot mais barato em balas"},{rank:5,name:"Cheap Shot",desc:"Dano extra de arma após One More"},{rank:7,name:"Bullet Hail",desc:"Atirar em grupo de inimigos"},{rank:10,name:"Low Profile",desc:"Inimigos têm menos chance de atacar você em Palace. Desbloqueia Moloch"}]},
     { id:"star", arcana:"XVII · THE STAR", name:"Hifumi Togo", persona:"Cybele", location:"Igreja em Kanda", availability:"Seg, Qua, Sex — Tarde | Ter, Qui, Sáb, Dom — Noite", deadline:null, unlock:"6/22 (requer Charm nível 3)", gifts:["Sakura Fan (¥2.400)","Watercolor Postcard (¥800)","Katana Figurine (¥3.200)"], bestGifts:"Katana Figurine (+3), Sakura Fan (+2)", likes:"Itens elegantes e tradicionais japoneses", tips:"Requer Charm nível 3. A habilidade Star Signal (Rank 5) permite trocar membros da party no MID-COMBATE — absolutamente essencial! Pode ser namorada.", romance:true, priority:"★★★★☆", color:"#f1c40f", abilities:[{rank:1,name:"Koma Sabaki",desc:"Move Joker para escapar de cercos durante infiltração"},{rank:3,name:"Uchi Sabaki",desc:"Retira Joker de combate para batalha em Mementos"},{rank:5,name:"Star Signal",desc:"Troca membros da equipe no MEIO DO COMBATE"},{rank:7,name:"Phantom Show",desc:"Escapa de batalha sem penalidade"},{rank:10,name:"Touken Ranbu",desc:"Troca todos os membros de uma vez. Desbloqueia Cybele"}]},
     { id:"moon", arcana:"XVIII · THE MOON", name:"Yuuki Mishima", persona:"Sandalphon", location:"Shibuya / mensagens de texto", availability:"Automático via mensagens de texto", deadline:null, unlock:"4/18", gifts:[], bestGifts:"Não aceita presentes", likes:"Completar Mementos Requests que ele manda", tips:"Avança completando Mementos Requests enviados por ele via SMS. Rank 7 aumenta EXP de todos os personagens em batalha. Certifique-se de ler TODOS os SMS de Mishima para não perder requests.", romance:false, priority:"★★★★☆", color:"#5dade2", abilities:[{rank:1,name:"Mishima's Enthusiasm",desc:"Bônus de EXP para membros não em batalha"},{rank:3,name:"Mishima's Support",desc:"Bônus de EXP aumentado"},{rank:5,name:"Mishima's Empathy",desc:"Bônus ainda maior de EXP fora da party"},{rank:7,name:"Mishima's Belief",desc:"Bônus de EXP para TODOS, inclusive quem está em batalha"},{rank:10,name:"Mishima's Desperation",desc:"EXP máximo para toda a equipe. Desbloqueia Sandalphon"}]},
     { id:"sun", arcana:"XIX · THE SUN", name:"Toranosuke Yoshida", persona:"Attis", location:"Parque em Shibuya (discurso político)", availability:"Seg, Ter, Qua, Sex — Noite", deadline:null, unlock:"5/8 (assista 3 discursos primeiro)", gifts:[], bestGifts:"Não aceita presentes", likes:"Apenas comparecer aos discursos e apoiá-lo", tips:"Para iniciar: assista 3 discursos dele. Habilidade Fundraising (Rank 3) é boa para farming de dinheiro de Sombras. Mind Control (Rank 7) é poderosa para recrutar Personas de alto nível.", romance:false, priority:"★★★☆☆", color:"#d35400", abilities:[{rank:1,name:"Public Appeal",desc:"Sombras rendem mais dinheiro em negociação"},{rank:3,name:"Fundraising",desc:"Sombras dão ainda mais dinheiro"},{rank:5,name:"Manipulation",desc:"Sombras rendem itens raros mais facilmente"},{rank:7,name:"Mind Control",desc:"Chance de recrutar Sombras de nível maior"},{rank:10,name:"Charismatic Speech",desc:"Recruta Sombras de alto nível com mais facilidade. Desbloqueia Attis"}]},
-    { id:"judgment", arcana:"XX · JUDGMENT", name:"Sae Niijima", persona:"Melchizedek", location:"Automático (história)", availability:"Automático", deadline:"20/11 (automático)", unlock:"4/11 (automático)", gifts:[], bestGifts:"Não aceita presentes", likes:"—", tips:"Ranqueia automaticamente com a história. Uma única habilidade no Rank 10 — True Judgement — que é a habilidade de ver o True Ending.", romance:false, priority:"★★★★★", color:"#7f8c8d", abilities:[{rank:10,name:"True Judgement",desc:"Desbloqueia a opção do True Ending da história"}]},
-    { id:"consultant", arcana:"XXI · THE CONSULTANT", name:"Takuto Maruki", persona:"Azathoth", location:"Escola / sala de orientação", availability:"Seg, Ter, Qua, Sex, Sáb — Tarde", deadline:"⚠️ URGENTE MÁXIMO: Rank 9 até 11/18", unlock:"5/13 (exclusivo do Royal)", gifts:["Homemade Miso (¥1.200)","White Miso (¥900)","Protein (¥1.500)"], bestGifts:"Protein (+2), Homemade Miso (+2)", likes:"Alimentos simples e nutritivos", tips:"EXCLUSIVO DO ROYAL. O Confidant mais IMPORTANTE do jogo. Você DEVE alcançar Rank 9 ANTES de 11/18 ou perderá o True Ending E pelo menos 2 troféus. Após 11/18, Maruki não estará mais disponível. Prioridade MÁXIMA desde o dia que você o encontra.", romance:false, priority:"★★★★★", color:"#1abc9c", abilities:[{rank:1,name:"Detox X",desc:"Cura status ailments após batalha"},{rank:3,name:"Flow",desc:"Chance de iniciar batalha em estado de bônus"},{rank:5,name:"Detox DX",desc:"Cura status ailments mais eficientemente"},{rank:7,name:"Flow II",desc:"Bônus melhorado no início de batalhas"},{rank:9,name:"Detox EX",desc:"Cura qualquer status ailment. DESBLOQUEIA O TRUE ENDING!"},{rank:10,name:"Awakening (NG+)",desc:"Desbloqueia Azathoth. Apenas em NG+"}]},
-    { id:"faith", arcana:"XXII · FAITH", name:"Kasumi Yoshizawa", persona:"Cendrillon → Vanadis", location:"Escola / vários locais", availability:"Qua em Junho e Set-Nov. Qui/Dom em dias limitados de Jul, Ago, Dez", deadline:"⚠️ Rank 5 até 12/22 para True Ending", unlock:"4/18 (exclusiva do Royal)", gifts:["Watercolor Postcard (¥800)","Gothic Choker (¥2.400)","Synthetic Flower (¥3.200)"], bestGifts:"Synthetic Flower (+3), Gothic Choker (+2)", likes:"Itens elegantes e florais", tips:"EXCLUSIVA DO ROYAL. Inicialmente ranqueia até Rank 5 antes de 12/22. Ranks 6-10 (como Sumire) desbloqueiam apenas após 1/13 no 3º Semestre. Disponibilidade é limitada e irregular — priorize! Pode ser namorada (como Sumire no 3º Semestre).", romance:true, priority:"★★★★★", color:"#e91e63", abilities:[{rank:1,name:"Baton Pass",desc:"Passa turno após crítico"},{rank:2,name:"Follow Up",desc:"Ataque extra após você abater inimigo"},{rank:4,name:"Harisen Recovery",desc:"Cura status após crítico"},{rank:6,name:"Endure (Sumire)",desc:"Sobrevive com 1HP"},{rank:8,name:"Inviolability",desc:"Protege aliados de golpe fatal"},{rank:10,name:"Second Awakening",desc:"Habilidade máxima desbloqueada. Desbloqueia Vanadis"}]},
+    { id:"judgment", arcana:"XX · THE JUDGMENT", name:"Sae Niijima", persona:"Melchizedek", location:"Automático (história)", availability:"Automático", deadline:"20/11 (automático)", unlock:"4/11 (automático)", gifts:[], bestGifts:"Não aceita presentes", likes:"—", tips:"Ranqueia automaticamente com a história. Uma única habilidade no Rank 10 — True Judgement — que é a habilidade de ver o True Ending.", romance:false, priority:"★★★★★", color:"#7f8c8d", abilities:[{rank:10,name:"True Judgement",desc:"Desbloqueia a opção do True Ending da história"}]},
+    { id:"consultant", arcana:"XXI · THE COUNCILLOR", name:"Takuto Maruki", persona:"Azathoth", location:"Escola / sala de orientação", availability:"Seg, Ter, Qua, Sex, Sáb — Tarde", deadline:"⚠️ URGENTE MÁXIMO: Rank 9 até 11/18", unlock:"5/13 (exclusivo do Royal)", gifts:["Homemade Miso (¥1.200)","White Miso (¥900)","Protein (¥1.500)"], bestGifts:"Protein (+2), Homemade Miso (+2)", likes:"Alimentos simples e nutritivos", tips:"EXCLUSIVO DO ROYAL. O Confidant mais IMPORTANTE do jogo. Você DEVE alcançar Rank 9 ANTES de 11/18 ou perderá o True Ending E pelo menos 2 troféus. Após 11/18, Maruki não estará mais disponível. Prioridade MÁXIMA desde o dia que você o encontra.", romance:false, priority:"★★★★★", color:"#1abc9c", abilities:[{rank:1,name:"Detox X",desc:"Cura status ailments após batalha"},{rank:3,name:"Flow",desc:"Chance de iniciar batalha em estado de bônus"},{rank:5,name:"Detox DX",desc:"Cura status ailments mais eficientemente"},{rank:7,name:"Flow II",desc:"Bônus melhorado no início de batalhas"},{rank:9,name:"Detox EX",desc:"Cura qualquer status ailment. DESBLOQUEIA O TRUE ENDING!"},{rank:10,name:"Awakening (NG+)",desc:"Desbloqueia Azathoth. Apenas em NG+"}]},
+    { id:"faith", arcana:"XXII · THE FAITH", name:"Kasumi Yoshizawa", persona:"Cendrillon → Vanadis", location:"Escola / vários locais", availability:"Qua em Junho e Set-Nov. Qui/Dom em dias limitados de Jul, Ago, Dez", deadline:"⚠️ Rank 5 até 12/22 para True Ending", unlock:"4/18 (exclusiva do Royal)", gifts:["Watercolor Postcard (¥800)","Gothic Choker (¥2.400)","Synthetic Flower (¥3.200)"], bestGifts:"Synthetic Flower (+3), Gothic Choker (+2)", likes:"Itens elegantes e florais", tips:"EXCLUSIVA DO ROYAL. Inicialmente ranqueia até Rank 5 antes de 12/22. Ranks 6-10 (como Sumire) desbloqueiam apenas após 1/13 no 3º Semestre. Disponibilidade é limitada e irregular — priorize! Pode ser namorada (como Sumire no 3º Semestre).", romance:true, priority:"★★★★★", color:"#e91e63", abilities:[{rank:1,name:"Baton Pass",desc:"Passa turno após crítico"},{rank:2,name:"Follow Up",desc:"Ataque extra após você abater inimigo"},{rank:4,name:"Harisen Recovery",desc:"Cura status após crítico"},{rank:6,name:"Endure (Sumire)",desc:"Sobrevive com 1HP"},{rank:8,name:"Inviolability",desc:"Protege aliados de golpe fatal"},{rank:10,name:"Second Awakening",desc:"Habilidade máxima desbloqueada. Desbloqueia Vanadis"}]},
   ],
   romanceTips: [
     { name:"Ann Tamaki", arcana:"Lovers", tip:"Rank 8 — escolha 'I want to protect you'. Simples e direto." },
@@ -1574,7 +1587,7 @@ const P5R_DATA = {
   ],
   monthlyGuide: [
     { month:"Abril", period:"4/9 – 4/30", focus:"Fundamentos", color:"#e74c3c", actions:["Inicie Takemi (Death) IMEDIATAMENTE em 4/18 — sua clínica será vital","Inicie Mishima (Moon) — automático após Kamoshida's Palace","Trabalhe na stat Kindness (varra o LeBlanc à noite) e Knowledge (leia livros)","Foque em terminar o Castle Palace antes de 4/20","Salve dinheiro — não gaste demais ainda","Assista ao discurso de Yoshida 3 vezes para desbloquear Sun Confidant"] },
-    { month:"Maio", period:"5/1 – 5/31", focus:"Expansão de Confidants", color:"#e67e22", actions:["Inicie Sojiro (Hierophant) em 5/4 — Kindness lv2 necessário","Inicie Maruki (Consultant) em 5/13 — MÁXIMA PRIORIDADE!","Inicie Iwai (Hanged Man) em 5/6 — Guts lv3 necessário","Inicie Ann (Lovers) e Ryuji (Chariot) logo após o Palace 2","Inicie Yusuke (Emperor) após o Palace 2","Palace 2 (Madarame) — termine antes de 5/18","Entre no Velvet Room para iniciar Caroline & Justine (Strength) em 5/18","Comece a aumentar Charm para Rank 3 — necessário para vários Confidants"] },
+    { month:"Maio", period:"5/1 – 5/31", focus:"Expansão de Confidants", color:"#e67e22", actions:["Inicie Sojiro (Hierophant) em 5/4 — Kindness lv2 necessário","Inicie Maruki (The Councillor) em 5/13 — MÁXIMA PRIORIDADE!","Inicie Iwai (Hanged Man) em 5/6 — Guts lv3 necessário","Inicie Ann (Lovers) e Ryuji (Chariot) logo após o Palace 2","Inicie Yusuke (Emperor) após o Palace 2","Palace 2 (Madarame) — termine antes de 5/18","Entre no Velvet Room para iniciar Caroline & Justine (Strength) em 5/18","Comece a aumentar Charm para Rank 3 — necessário para vários Confidants"] },
     { month:"Junho", period:"6/1 – 6/30", focus:"Novos Confidants Importantes", color:"#f39c12", actions:["Inicie Chihaya (Fortune) em 6/22 — pague ¥100.000 (você recebe de volta no Rank 2!)","Inicie Ohya (Devil) em 6/23 — requer Charm lv3","Inicie Hifumi (Star) em 6/22 — requer Charm lv3","Inicie Akechi (Justice) em 6/10 — DEADLINE 11/17, não atrase!","Palace 3 (Kaneshiro) — termine antes de 6/20","Priorize Maruki e Takemi acima de qualquer outro Confidant","Use Chihaya para Affinity Reading em Confidants que você quer rankear mais rápido"] },
     { month:"Julho", period:"7/1 – 7/31", focus:"Aceleração e Férias", color:"#27ae60", actions:["Férias escolares = MUITA disponibilidade de tempo","Use Affinity Reading de Chihaya regularmente","Leve sempre a Persona certa ao encontrar Confidants (bônus x1.5)","Priorize: Maruki, Kawakami, Sojiro, Akechi","Trabalhe no Palace 4 (Futaba's Palace) — termine antes de 8/21","Trabalhe em fusões para Caroline & Justine","Faça Batting Cage para subir Proficiency","Kichijoji — explore para troféus de localização"] },
     { month:"Agosto", period:"8/1 – 8/31", focus:"Férias de Verão", color:"#16a085", actions:["Último mês de férias — máxima aproveitagem de tempo livre","Futaba (Hermit) fica disponível após 8/31 — prepare-se","Continue Confidants atrasados","Termine Palace 4 (Futaba) antes de 8/21","Foque em subir stats que ainda precisam (Guts, Charm, Kindness)","Colete Will Seeds dos Palaces já completos para acessórios","Farme dinheiro com Mementos + Chihaya Money Reading"] },
@@ -2815,230 +2828,990 @@ const CONFIDANT_DIALOGUES = {
   },
 
   star: { // Hifumi Togo
-    1: { note:"Disponível após visita à Igreja Kanda em 6/5 (noite). Requer Knowledge Rank 3.", choices:[
-      { prompt:"Where did you learn this game?", options:[
-        {opt:"1",text:"I heard about it.",pts:2},{opt:"3",text:"I was drawn to it.",pts:3}]}]},
-    2: { note:"Desbloqueia Koma Saburo → substituto de batalha.", choices:[
-      { prompt:"What do you think of my playing?", options:[
-        {opt:"1",text:"It's intense.",pts:3},{opt:"2",text:"It's beautiful.",pts:3},{opt:"3",text:"It's weird.",pts:2}]},
-      { prompt:"(P5R Ligação) Do you think I'm too harsh on myself?", options:[
-        {opt:"2",text:"Not at all.",pts:2,tag:"p5r"}]}]},
-    3: { note:"", choices:[
-      { prompt:"Do you think I lack something as a player?", options:[
-        {opt:"2",text:"Your passion.",pts:3},{opt:"1",text:"I don't know enough.",pts:2}]},
-      { prompt:"(P5R Ligação) I feel like my moves aren't fully hitting their mark lately.", options:[
-        {opt:"1",text:"You'll figure it out.",pts:2,tag:"p5r"}]}]},
-    4: { note:"Desbloqueia Narikin → swap party em batalha.", choices:[
-      { prompt:"Why do you spend so much time with me?", options:[
-        {opt:"1",text:"I enjoy your company.",pts:3},{opt:"2",text:"I want to learn shogi.",pts:2}]},
-      { prompt:"(P5R Ligação) I wonder if there's anyone who truly understands how I feel.", options:[
-        {opt:"1",text:"I do.",pts:2,tag:"p5r"}]}]},
-    5: { note:"", choices:[
-      { prompt:"Can I trust you...?", options:[
-        {opt:"1",text:"You can.",pts:3},{opt:"2",text:"That's your choice.",pts:2}]},
-      { prompt:"(P5R Ligação) I found out the real reason behind my father's behavior.", options:[
-        {opt:"1",text:"That must be hard.",pts:2,tag:"p5r"}]}]},
-    6: { note:"Desbloqueia Kakoi Kuzushi → swap falha/KO.", choices:[
-      { prompt:"My father's using my fame for his own benefit...", options:[
-        {opt:"2",text:"That's horrible.",pts:3},{opt:"1",text:"Maybe he means well.",pts:2}]}]},
-    7: { note:"", choices:[
-      { prompt:"What should I do about my father?", options:[
-        {opt:"1",text:"Confront him.",pts:3},{opt:"2",text:"Wait and see.",pts:2}]}]},
-    8: { note:"", choices:[
-      { prompt:"Do you think a person can truly change?", options:[
-        {opt:"1",text:"Absolutely.",pts:3},{opt:"2",text:"It's possible.",pts:2}]}]},
-    9: { note:"⚠️ Ponto de Romance", choices:[
-      { prompt:"I want to play properly... and win properly.", options:[
-        {opt:"1",text:"I believe in you.",pts:3},{opt:"2",text:"That sounds right.",pts:2}]},
-      { prompt:"You've been so patient with me... why?", options:[
-        {opt:"1",text:"Because I care about you.",pts:0,tag:"romance"},{opt:"2",text:"We're friends.",pts:0,tag:"friend"}]},
-      { prompt:"(P5R Ligação se romanceada)", options:[
-        {opt:"1",text:"I'll support you always.",pts:3,tag:"p5r"}]}]},
-    10: { note:"Desbloqueia Togo System + Lucifer para fusão", choices:[] }
-  },
+  1: { note:"Disponível após Kaneshiro (6/25+). Requer Charm Rank 3. Desbloqueia Koma Sabaki → troca de membros em batalha.", choices:[
+    { prompt:"Would you like to exchange IDs with me?", options:[
+      {opt:"3",text:"Lucky me.",pts:3},
+      {opt:"1",text:"Sure.",pts:2},
+      {opt:"2",text:"I guess we can.",pts:2}
+    ]}
+  ]},
+
+  2: { note:"Bônus: Knowledge Up.", choices:[
+    { prompt:"It's as if I assume the role of a queen...", options:[
+      {opt:"1",text:"That's interesting.",pts:2}
+    ]},
+    { prompt:"I'm doing a photoshoot...", options:[
+      {opt:"3",text:"But you don't want to, right?",pts:2}
+    ]}
+  ]},
+
+  3: { note:"Desbloqueia Uchikomi → aliados fora da party atacam. Knowledge Up.", choices:[
+    { prompt:"Did you see it...? Venus of Shogi...", options:[
+      {opt:"1",text:"Describes you perfectly.",pts:2}
+    ]},
+    { prompt:"She wants to manage me...", options:[
+      {opt:"2",text:"Having a difficult time?",pts:2}
+    ]},
+    { prompt:"(Ligação) How can I teach you properly...?", options:[
+      {opt:"1",text:"Bring it on.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  4: { note:"Desbloqueia Book Town. Knowledge Up.", choices:[
+    { prompt:"I defeated my senior...", options:[
+      {opt:"1",text:"I didn't mind.",pts:2},
+      {opt:"3",text:"Must've been the katsu curry.",pts:2}
+    ]},
+    { prompt:"What do you think about them?", options:[
+      {opt:"2",text:"They're cool.",pts:2}
+    ]},
+    { prompt:"(Ligação) I'd love to do this again.", options:[
+      {opt:"1",text:"I'd love to.",pts:2,tag:"p5r"},
+      {opt:"3",text:"Where shall we go next?",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  5: { note:"Desbloqueia Kakoi Kuzushi → fugir cercado. Knowledge Up.", choices:[
+    { prompt:"That must have been quite a shock.", options:[
+      {opt:"2",text:"She's scary.",pts:2}
+    ]},
+    { prompt:"It's honestly difficult for me.", options:[
+      {opt:"2",text:"You should stop then.",pts:2}
+    ]},
+    { prompt:"(Ligação) Accept my apology...", options:[
+      {opt:"2",text:"You've got a lot to deal with.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  6: { note:"Desbloqueia Sky Tower. Knowledge Up.", choices:[
+    { prompt:"More interviews now...", options:[
+      {opt:"2",text:"Is that frustrating?",pts:2}
+    ]},
+    { prompt:"Maybe I should quit shogi...", options:[
+      {opt:"3",text:"Do what you love.",pts:2},
+      {opt:"1",text:"Do you still like shogi?",pts:2}
+    ]},
+    { prompt:"(Ligação) You're a good listener...", options:[
+      {opt:"2",text:"You're imagining things.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  7: { note:"Desbloqueia Narikin → chance de dinheiro dobrado. Knowledge Up.", choices:[
+    { prompt:"I'm a bit scared...", options:[
+      {opt:"3",text:"It may come down to luck.",pts:3},
+      {opt:"1",text:"That's almost a relief.",pts:2}
+    ]},
+    { prompt:"I have to prove myself!", options:[
+      {opt:"2",text:"I believe in you.",pts:3},
+      {opt:"1",text:"Give it your all.",pts:2}
+    ]}
+  ]},
+
+  8: { note:"Requer Knowledge Rank 5. Libera request: Upstaging the Stage Mother.", choices:[
+    { prompt:"I'll become famous quickly...", options:[
+      {opt:"1",text:"That won't work.",pts:2}
+    ]},
+    { prompt:"Após Mementos...", options:[
+      {opt:"3",text:"I'm glad her heart changed.",pts:3},
+      {opt:"1",text:"Maybe...",pts:2}
+    ]}
+  ]},
+
+  9: { note:"⚠️ Ponto de Romance. Desbloqueia Touryou.", choices:[
+    { prompt:"I'm going to win...", options:[
+      {opt:"1",text:"Give it your all.",pts:2}
+    ]},
+    { prompt:"I didn't want to hurt the pieces...", options:[
+      {opt:"3",text:"A very queenly decision.",pts:3}
+    ]},
+    { prompt:"...So this is goodbye.", options:[
+      {opt:"2",text:"I want to stay by your side.",pts:0,tag:"romance"},
+      {opt:"1",text:"I want to become stronger.",pts:0,tag:"friend"}
+    ]},
+    { prompt:"(Se romance)", options:[
+      {opt:"1",text:"I want us to date.",pts:0,tag:"romance"},
+      {opt:"2",text:"We'll be friends forever.",pts:0,tag:"friend"}
+    ]},
+    { prompt:"(Ligação P5R)", options:[
+      {opt:"1",text:"(Qualquer opção)",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  10: { note:"Desbloqueia Togo System + Lucifer para fusão", choices:[] }
+},
 
   sun: { // Toranosuke Yoshida
-    1: { note:"Disponível após 6/23. Ouça o discurso em Shibuya. DEADLINE: meados de Novembro.", choices:[
-      { prompt:"What did you think of my speech today?", options:[
-        {opt:"1",text:"It was moving.",pts:3},{opt:"2",text:"It was interesting.",pts:2}]}]},
-    2: { note:"Desbloqueia Fundraising → melhores recompensas de negociação.", choices:[
-      { prompt:"Is there anything you look for in a politician?", options:[
-        {opt:"1",text:"Someone who keeps promises.",pts:3},{opt:"2",text:"Someone popular.",pts:2}]},
-      { prompt:"(P5R Ligação) What do you think will happen to this country?", options:[
-        {opt:"2",text:"It can still change.",pts:2,tag:"p5r"}]}]},
-    3: { note:"", choices:[
-      { prompt:"What made you want to listen to my speech in the first place?", options:[
-        {opt:"2",text:"Your passion caught my eye.",pts:3},{opt:"1",text:"I was just passing by.",pts:2}]}]},
-    4: { note:"", choices:[
-      { prompt:"Do you think people can really change?", options:[
-        {opt:"1",text:"If they want to.",pts:3},{opt:"2",text:"Rarely.",pts:2}]}]},
-    5: { note:"Desbloqueia Diplomacy → Personas se juntam com menos negociação.", choices:[
-      { prompt:"Why do you still come to hear my speeches?", options:[
-        {opt:"1",text:"I believe in your vision.",pts:3},{opt:"2",text:"I feel responsible for you.",pts:2}]}]},
-    6: { note:"", choices:[
-      { prompt:"What do you think politics needs most?", options:[
-        {opt:"1",text:"Honesty.",pts:3},{opt:"2",text:"Power.",pts:2}]}]},
-    7: { note:"", choices:[
-      { prompt:"Someone from my past has reached out...", options:[
-        {opt:"1",text:"What do they want?",pts:2},{opt:"2",text:"Is it related to what happened?",pts:3}]}]},
-    8: { note:"", choices:[
-      { prompt:"Was I wrong to take that shortcut?", options:[
-        {opt:"2",text:"You need to face it.",pts:3},{opt:"1",text:"Everyone makes mistakes.",pts:2}]}]},
-    9: { note:"", choices:[
-      { prompt:"Do you think the people will ever forgive me?", options:[
-        {opt:"1",text:"If you earn it.",pts:3},{opt:"2",text:"Some of them might.",pts:2}]}]},
-    10: { note:"Desbloqueia Charisma → itens raros de negociação + Attis para fusão", choices:[] }
-  },
+
+  1: { note:"Disponível a partir de 5/6. Trabalhe 2x no Beef Bowl Shop para desbloquear. DEADLINE: ~11/13.", choices:[
+    { prompt:"Would you be willing to stick around to hear it?", options:[
+      {opt:"3",text:"Let me write this down.",pts:3}
+    ]}
+  ]},
+
+  2: { note:"Desbloqueia Diplomacy → mais dinheiro/itens em negociação.", choices:[
+    { prompt:"Why do you want to become a politician?", options:[
+      {opt:"2",text:"I want to improve my speech.",pts:2}
+    ]},
+    { prompt:"What kind of politician do you want to be?", options:[
+      {opt:"1",text:"One with conviction.",pts:2},
+      {opt:"3",text:"I don't know yet.",pts:2}
+    ]},
+    { prompt:"That is the foundation of a great speech.", options:[
+      {opt:"1",text:"That was helpful.",pts:2}
+    ]},
+    { prompt:"(P5R Ligação) Did you take anything useful from it?", options:[
+      {opt:"1",text:"It was helpful.",pts:2,tag:"p5r"},
+      {opt:"2",text:"Somewhat.",pts:2,tag:"p5r"},
+      {opt:"3",text:"It changed my whole outlook.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  3: { note:"Desbloqueia Fundraising → ganha mais dinheiro em negociação.", choices:[
+    { prompt:"What about Yoshida drew you in?", options:[
+      {opt:"1",text:"His message.",pts:2},
+      {opt:"2",text:"His speaking skills.",pts:2}
+    ]},
+    { prompt:"(P5R Ligação)", options:[
+      {opt:"3",text:"You think I'll ever find it?",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  4: { note:"", choices:[
+    { prompt:"The highlight was your yelling.", options:[
+      {opt:"1",text:"I couldn't help myself.",pts:2}
+    ]},
+    { prompt:"(P5R Ligação)", options:[
+      {opt:"1",text:"I will.",pts:2,tag:"p5r"},
+      {opt:"3",text:"Can't forget your roots.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  5: { note:"Desbloqueia Manipulation → maior chance de itens raros.", choices:[
+    { prompt:"Do you think I've regained my confidence?", options:[
+      {opt:"3",text:"That media doesn't matter.",pts:3},
+      {opt:"1",text:"I think so.",pts:2}
+    ]}
+  ]},
+
+  6: { note:"", choices:[
+    { prompt:"Are you for or against them?", options:[
+      {opt:"3",text:"I don't really care.",pts:3},
+      {opt:"1",text:"I'm for them.",pts:2}
+    ]},
+    { prompt:"What would you do?", options:[
+      {opt:"1",text:"I'd decline.",pts:3},
+      {opt:"3",text:"I'd leave it to chance.",pts:2}
+    ]},
+    { prompt:"(P5R Ligação)", options:[
+      {opt:"1",text:"I'll keep that in mind.",pts:2,tag:"p5r"},
+      {opt:"3",text:"You make quite a case.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  7: { note:"", choices:[
+    { prompt:"Could you talk some sense into him?", options:[
+      {opt:"1",text:"You should decline.",pts:2}
+    ]}
+  ]},
+
+  8: { note:"Desbloqueia Mind Control → pode pular negociação.", choices:[
+    { prompt:"That's a difficult decision...", options:[
+      {opt:"3",text:"That's a difficult decision.",pts:2}
+    ]},
+    { prompt:"What should I do?", options:[
+      {opt:"1",text:"Stick to your beliefs.",pts:3}
+    ]},
+    { prompt:"(P5R Ligação)", options:[
+      {opt:"1",text:"I'll never forget that.",pts:2,tag:"p5r"},
+      {opt:"2",text:"It's tougher than it seems.",pts:2,tag:"p5r"}
+    ]}
+  ]},
+
+  9: { note:"", choices:[
+    { prompt:"I'm going to get started.", options:[
+      {opt:"1",text:"Do your best.",pts:3},
+      {opt:"3",text:"I'm getting nervous.",pts:2}
+    ]},
+    { prompt:"You moved my heart.", options:[
+      {opt:"2",text:"You had a change of heart.",pts:2}
+    ]}
+  ]},
+
+  10: { note:"Desbloqueia Charismatic Speech + Asura para fusão", choices:[] }
+
+},
 
   moon: { // Yuuki Mishima
-    1: { note:"Automático via história. Rank sobe com sidequests do Mementos.", choices:[] },
-    2: { note:"Complete sidequests no Mementos para avançar.", choices:[] },
-    3: { note:"", choices:[] },
-    4: { note:"Desbloqueia Mishima's Enthusiasm → EXP bônus após batalha.", choices:[] },
-    5: { note:"", choices:[] },
-    6: { note:"Desbloqueia Party Exp Up → membros inativos recebem EXP.", choices:[] },
-    7: { note:"", choices:[
-      { prompt:"I've been running the Phansite all this time, but...", options:[
-        {opt:"1",text:"You've helped everyone.",pts:3},{opt:"2",text:"Don't be so hard on yourself.",pts:2}]}]},
-    8: { note:"Desbloqueia Salvation Wish → membros inativos ganham mais EXP.", choices:[] },
-    9: { note:"", choices:[
-      { prompt:"I was gonna do something stupid...", options:[
-        {opt:"1",text:"I'm glad you didn't.",pts:3},{opt:"2",text:"What happened?",pts:2}]}]},
-    10: { note:"Desbloqueia Legendary Fool + Nue para fusão", choices:[] }
+  1: { 
+    note:"Automático via história (5/6). Desbloqueia Mishima's Support → membros reserva ganham EXP.", 
+    choices:[] 
   },
+
+  2: { 
+    note:"Automático (5/8).", 
+    choices:[
+      { prompt:"We need the Phantom Thieves to be seen properly...", options:[
+        {opt:"1",text:"You've done good, kid.",pts:3}
+      ]},
+      { prompt:"Strategic image management...", options:[
+        {opt:"2",text:"Sounds cool.",pts:3},
+        {opt:"3",text:"You're really hyped.",pts:2}
+      ]},
+      { prompt:"(Ligação)", options:[
+        {opt:"1",text:"Nice hustle.",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  3: { 
+    note:"Desbloqueia Mishima's Enthusiasm → mais EXP.", 
+    choices:[
+      { prompt:"All thieves have special ladies...", options:[
+        {opt:"2",text:"Great idea.",pts:3},
+        {opt:"3",text:"I'm already taken.",pts:2}
+      ]},
+      { prompt:"Don't spill the beans...", options:[
+        {opt:"2",text:"Phandom?",pts:2},
+        {opt:"3",text:"Tell the truth.",pts:2}
+      ]},
+      { prompt:"(Ligação)", options:[
+        {opt:"1",text:"Of course.",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  4: { 
+    note:"", 
+    choices:[
+      { prompt:"What do you wanna eat?", options:[
+        {opt:"1",text:"Steak sounds good.",pts:3},
+        {opt:"3",text:"I love desserts.",pts:2}
+      ]},
+      { prompt:"You're amazing?", options:[
+        {opt:"1",text:"You're amazing.",pts:2}
+      ]}
+    ]
+  },
+
+  5: { 
+    note:"Desbloqueia Mishima's Desperation → mais EXP reserva.", 
+    choices:[
+      { prompt:"It cost me a lot...", options:[
+        {opt:"3",text:"Is it for me?",pts:3},
+        {opt:"1",text:"Why expensive?",pts:2}
+      ]}
+    ]
+  },
+
+  6: { 
+    note:"Desbloqueia Inokashira Park.", 
+    choices:[
+      { prompt:"This one's massive!", options:[
+        {opt:"1",text:"Tell me already.",pts:2}
+      ]}
+    ]
+  },
+
+  7: { 
+    note:"Desbloqueia Phanboy → EXP massivo.", 
+    choices:[
+      { prompt:"Next target...", options:[
+        {opt:"2",text:"You're reliable.",pts:3}
+      ]},
+      { prompt:"Phansite...", options:[
+        {opt:"3",text:"Maybe the Phansite?",pts:3}
+      ]}
+    ]
+  },
+
+  8: { 
+    note:"Evento crítico do Mishima.", 
+    choices:[
+      { prompt:"Run...", options:[
+        {opt:"1",text:"I'm not leaving.",pts:3}
+      ]},
+      { prompt:"You suck?", options:[
+        {opt:"3",text:"That was all an act?",pts:3}
+      ]}
+    ]
+  },
+
+  9: { 
+    note:"Evento final emocional.", 
+    choices:[
+      { prompt:"I would've been dead...", options:[
+        {opt:"2",text:"You showed courage.",pts:3},
+        {opt:"3",text:"Glad you're alive.",pts:2}
+      ]}
+    ]
+  },
+
+  10: { 
+    note:"Desbloqueia Salvation Wish + Sandalphon para fusão", 
+    choices:[] 
+  }
+},
 
   devil: { // Ichiko Ohya
-    1: { note:"Disponível em Shinjuku após 6/23. Requer Guts Rank 2.", choices:[
+
+  1: { 
+    note:"Disponível em Shinjuku após 6/23. Requer Guts Rank 2. Desbloqueia Rumor-filled Scoop (nível de alerta sobe mais devagar).", 
+    choices:[
       { prompt:"You're asking the questions, so I get to decide if I'll answer, yeah?", options:[
-        {opt:"1",text:"Fair enough.",pts:3},{opt:"2",text:"I guess so.",pts:2}]}]},
-    2: { note:"", choices:[
-      { prompt:"What do you think of my job?", options:[
-        {opt:"1",text:"It's important work.",pts:3},{opt:"2",text:"Sounds stressful.",pts:2}]}]},
-    3: { note:"Desbloqueia Rumor-Mill → Ohya reduz nível de Alerta em Palaces.", choices:[
-      { prompt:"Do you think a corrupt editor can be changed?", options:[
-        {opt:"1",text:"Depending on the person.",pts:3},{opt:"2",text:"Probably not.",pts:2}]}]},
-    4: { note:"", choices:[
-      { prompt:"What would you do if someone was using you?", options:[
-        {opt:"1",text:"Expose them.",pts:3},{opt:"2",text:"Leave them.",pts:2}]}]},
-    5: { note:"Desbloqueia Ohya's Insight → maior redução de Alerta em Palaces.", choices:[
-      { prompt:"Why do you keep helping me?", options:[
-        {opt:"1",text:"I want to.",pts:3},{opt:"2",text:"You need help.",pts:2}]}]},
-    6: { note:"", choices:[
-      { prompt:"I found something in Kayo's files...", options:[
-        {opt:"2",text:"What did it say?",pts:3},{opt:"1",text:"Be careful.",pts:2}]}]},
-    7: { note:"", choices:[
-      { prompt:"Am I going too far with this?", options:[
-        {opt:"1",text:"No, keep going.",pts:3},{opt:"2",text:"Maybe slow down.",pts:2}]}]},
-    8: { note:"Desbloqueia Network → ALERTA não sobe em Palaces. Muito útil.", choices:[
-      { prompt:"Do you think I was wrong to pursue this story?", options:[
-        {opt:"1",text:"Absolutely not.",pts:3},{opt:"2",text:"You did what you had to.",pts:2}]}]},
-    9: { note:"⚠️ Ponto de Romance", choices:[
-      { prompt:"I couldn't have done this without you.", options:[
-        {opt:"1",text:"We did it together.",pts:3},{opt:"2",text:"You earned it.",pts:3}]},
-      { prompt:"Is this... something more to you?", options:[
-        {opt:"1",text:"It is.",pts:0,tag:"romance"},{opt:"2",text:"You're a friend.",pts:0,tag:"friend"}]}]},
-    10: { note:"Desbloqueia Guts +5 + Lilith para fusão", choices:[] }
+        {opt:"1",text:"Fair enough.",pts:3},
+        {opt:"2",text:"I guess so.",pts:2}
+      ]}
+    ]
   },
 
-  tower: { // Shinya Oda
-    1: { note:"Disponível em Akihabara após 9/2. Requer Kindness Rank 3.", choices:[
-      { prompt:"Why are you hanging around the arcade?", options:[
-        {opt:"2",text:"I like it here.",pts:3},{opt:"1",text:"I noticed you.",pts:2}]}]},
-    2: { note:"Desbloqueia Down Shot → pode derrubar inimigos em 1 tiro.", choices:[
-      { prompt:"What do you think of adults?", options:[
-        {opt:"2",text:"Some are good, some aren't.",pts:3},{opt:"1",text:"They're hard to read.",pts:2}]}]},
-    3: { note:"", choices:[
-      { prompt:"Why are grown-ups always like this?", options:[
-        {opt:"1",text:"Not all of them are.",pts:3},{opt:"2",text:"That's just how it is.",pts:2}]}]},
-    4: { note:"Desbloqueia Warning Shot → pode causar Hold Up em inimigos já fracos.", choices:[
-      { prompt:"Do you think I should trust people more?", options:[
-        {opt:"1",text:"Yes, little by little.",pts:3},{opt:"2",text:"Trust has to be earned.",pts:2}]}]},
-    5: { note:"", choices:[
-      { prompt:"My mom... she never believed in me.", options:[
-        {opt:"1",text:"I believe in you.",pts:3},{opt:"2",text:"What happened?",pts:2}]}]},
-    6: { note:"", choices:[
-      { prompt:"Is my mom really a bad person?", options:[
-        {opt:"2",text:"She's misguided.",pts:3},{opt:"1",text:"I can't say.",pts:2}]}]},
-    7: { note:"Desbloqueia Sadistic Shot → Hold Up mais fácil.", choices:[
-      { prompt:"What should I do now?", options:[
-        {opt:"1",text:"Follow your own path.",pts:3},{opt:"2",text:"Talk to her.",pts:2}]}]},
-    8: { note:"", choices:[
-      { prompt:"She finally apologized...", options:[
-        {opt:"1",text:"That must be a relief.",pts:3},{opt:"2",text:"How do you feel?",pts:2}]}]},
-    9: { note:"", choices:[
-      { prompt:"I want to get better at the game. Not for her, but for me.", options:[
-        {opt:"1",text:"I'll help.",pts:3},{opt:"2",text:"Go for it.",pts:2}]}]},
-    10: { note:"Desbloqueia Life Bullet → bullets de Hold Up podem KO inimigos fracos", choices:[] }
+  2: { 
+    note:"Charm +. Reduz aumento de alerta.", 
+    choices:[
+      { prompt:"What do you think of my job?", options:[
+        {opt:"1",text:"It's important work.",pts:3},
+        {opt:"2",text:"Sounds stressful.",pts:2}
+      ]},
+      { prompt:"...You have any photos or videos of it?", options:[
+        {opt:"3",text:"Mishima might...",pts:2}
+      ]},
+      { prompt:"Why are you coming to a bar if you can't even drink alcohol?", options:[
+        {opt:"2",text:"It's for the article.",pts:2}
+      ]}
+    ]
   },
+
+  3: { 
+    note:"Desbloqueia Rumor-Mill → reduz alerta. Charm +", 
+    choices:[
+      { prompt:"Do you think a corrupt editor can be changed?", options:[
+        {opt:"1",text:"Depending on the person.",pts:3},
+        {opt:"2",text:"Probably not.",pts:2}
+      ]},
+      { prompt:"I have a theory that they're all minors...", options:[
+        {opt:"3",text:"You shouldn't make assumptions.",pts:2}
+      ]},
+      { prompt:"That's why I can't quit...", options:[
+        {opt:"3",text:"Was she falsely accused?",pts:2}
+      ]}
+    ]
+  },
+
+  4: { 
+    note:"Desbloqueia Shocking Scoop. Charm +", 
+    choices:[
+      { prompt:"What would you do if someone was using you?", options:[
+        {opt:"1",text:"Expose them.",pts:3},
+        {opt:"2",text:"Leave them.",pts:2}
+      ]},
+      { prompt:"We're totally dating, aren't we, sweetie?", options:[
+        {opt:"1",text:"Of course we are.",pts:2},
+        {opt:"2",text:"Don't tell anybody.",pts:2}
+      ]},
+      { prompt:"(Phone) I'll write you a solid article...", options:[
+        {opt:"1",text:"Leave it to me.",pts:2},
+        {opt:"2",text:"That was our deal.",pts:2}
+      ]}
+    ]
+  },
+
+  5: { 
+    note:"Desbloqueia Ohya's Insight. Charm +", 
+    choices:[
+      { prompt:"Why do you keep helping me?", options:[
+        {opt:"1",text:"I want to.",pts:3},
+        {opt:"2",text:"You need help.",pts:2}
+      ]},
+      { prompt:"I'm going to prove Kayo's innocence...", options:[
+        {opt:"2",text:"That's unforgivable.",pts:3},
+        {opt:"1",text:"That sounds like defamation.",pts:2}
+      ]},
+      { prompt:"(Phone) For digging up your records...", options:[
+        {opt:"1",text:"I don't mind it.",pts:2}
+      ]}
+    ]
+  },
+
+  6: { 
+    note:"Charm +", 
+    choices:[
+      { prompt:"I found something in Kayo's files...", options:[
+        {opt:"2",text:"What did it say?",pts:3},
+        {opt:"1",text:"Be careful.",pts:2}
+      ]},
+      { prompt:"Ugh, my chief's such a shithead...", options:[
+        {opt:"1",text:"He must not like you.",pts:2}
+      ]},
+      { prompt:"Maybe Kayo really was the culprit.", options:[
+        {opt:"2",text:"You should trust in her.",pts:2}
+      ]},
+      { prompt:"That incident is all my fault...", options:[
+        {opt:"1",text:"That's the spirit.",pts:2},
+        {opt:"2",text:"You're a great journalist.",pts:2}
+      ]},
+      { prompt:"(Phone) I'll meet my quota...", options:[
+        {opt:"3",text:"I'll dig up some more for you.",pts:2}
+      ]}
+    ]
+  },
+
+  7: { 
+    note:"Charm +", 
+    choices:[
+      { prompt:"Am I going too far with this?", options:[
+        {opt:"1",text:"No, keep going.",pts:3},
+        {opt:"2",text:"Maybe slow down.",pts:2}
+      ]},
+      { prompt:"What should I do? Should I go knock him out?!", options:[
+        {opt:"3",text:"Let's think of another way.",pts:3},
+        {opt:"2",text:"Don't let him provoke you.",pts:3},
+        {opt:"1",text:"Calm down.",pts:2}
+      ]},
+      { prompt:"I wish I was better at controlling my emotions.", options:[
+        {opt:"2",text:"You're charming as you are.",pts:3},
+        {opt:"1",text:"You should work on that.",pts:2}
+      ]},
+      { prompt:"(Phone) I'll do whatever it takes...", options:[
+        {opt:"1",text:"That's the spirit.",pts:2}
+      ]}
+    ]
+  },
+
+  8: { 
+    note:"Desbloqueia Network. Missão em Mementos necessária. Charm +", 
+    choices:[
+      { prompt:"Do you think I was wrong to pursue this story?", options:[
+        {opt:"1",text:"Absolutely not.",pts:3},
+        {opt:"2",text:"You did what you had to.",pts:2}
+      ]},
+      { prompt:"Say something.", options:[
+        {opt:"2",text:"You seem tired.",pts:2}
+      ]},
+      { prompt:"About what happened that night...", options:[
+        {opt:"1",text:"That's not like you.",pts:3},
+        {opt:"2",text:"You need to pursue the truth.",pts:3},
+        {opt:"3",text:"I'll go with you.",pts:3}
+      ]},
+      { prompt:"(Phone) I'll chase the truth.", options:[
+        {opt:"1",text:"Good luck.",pts:2},
+        {opt:"2",text:"Be careful.",pts:2}
+      ]}
+    ]
+  },
+
+  9: { 
+    note:"⚠️ Ponto de Romance", 
+    choices:[
+      { prompt:"I couldn't have done this without you.", options:[
+        {opt:"1",text:"We did it together.",pts:3},
+        {opt:"2",text:"You earned it.",pts:3}
+      ]},
+      { prompt:"I'd get crushed if I tried...", options:[
+        {opt:"2",text:"You're not giving up, are you?",pts:2}
+      ]},
+      { prompt:"You shouldn't come here again.", options:[
+        {opt:"1",text:"I can't leave you.",pts:3},
+        {opt:"2",text:"I want to help.",pts:3}
+      ]},
+      { prompt:"Is this... something more?", options:[
+        {opt:"1",text:"It is.",pts:0,tag:"romance"},
+        {opt:"2",text:"You're a friend.",pts:0,tag:"friend"}
+      ]},
+      { prompt:"(Romance) Confession", options:[
+        {opt:"1",text:"I love you, Ichiko.",pts:0,tag:"romance"},
+        {opt:"2",text:"I'm just kidding.",pts:0,tag:"friend"}
+      ]}
+    ]
+  },
+
+  10: { 
+    note:"Desbloqueia Legendary Scoop + Beelzebub. Charm +5", 
+    choices:[] 
+  }
+
+},
+  tower: { // Shinya Oda
+
+  1: { note:"Disponível após quest 'Winners Don't Use Cheats' (9/4). Desbloqueia Down Shot + Kindness +.", choices:[
+    { prompt:"Call me when it's game time.", options:[
+      {opt:"1",text:"Sure.",pts:3},{opt:"2",text:"Maybe later.",pts:2}
+    ]}
+  ]},
+
+  2: { note:"Desbloqueia Bullet Hail → chance de ataque com armas após emboscada.", choices:[
+    { prompt:"Don't compare me to you.", options:[
+      {opt:"1",text:"Sorry.",pts:2},{opt:"2",text:"Don't compare me to you.",pts:3}
+    ]},
+    { prompt:"What a rude employee.", options:[
+      {opt:"1",text:"Yeah, rude.",pts:2}
+    ]},
+    { prompt:"Do you admire them?", options:[
+      {opt:"1",text:"Yeah.",pts:2}
+    ]},
+    { prompt:"So do I.", options:[
+      {opt:"1",text:"So do I.",pts:3},{opt:"2",text:"I'll let them know.",pts:3}
+    ]},
+    { prompt:"Phone Call: I'll work hard.", options:[
+      {opt:"1",text:"Good.",pts:2},{opt:"2",text:"So then I can beat you?",pts:2}
+    ]}
+  ]},
+
+  3: { note:"Desbloqueia Warning Shot → facilita negociação com Shadows.", choices:[
+    { prompt:"That's the spirit.", options:[
+      {opt:"1",text:"That's the spirit.",pts:2}
+    ]},
+    { prompt:"Phone Call: Sure.", options:[
+      {opt:"1",text:"Sure.",pts:2}
+    ]}
+  ]},
+
+  4: { note:"", choices:[
+    { prompt:"Dr. Takemi will help.", options:[
+      {opt:"1",text:"She can help.",pts:2}
+    ]},
+    { prompt:"You seem happy.", options:[
+      {opt:"1",text:"You seem happy.",pts:3},
+      {opt:"2",text:"You're so kind.",pts:2},
+      {opt:"3",text:"Why free?",pts:2}
+    ]}
+  ]},
+
+  5: { note:"Desbloqueia Ammo Pouch → aumenta munição máxima.", choices:[
+    { prompt:"Yeah, you tell him!", options:[
+      {opt:"1",text:"Yeah!",pts:2}
+    ]},
+    { prompt:"Get your revenge.", options:[
+      {opt:"1",text:"Go for it.",pts:2}
+    ]},
+    { prompt:"Phone Call: I'll be cheering you on.", options:[
+      {opt:"1",text:"You can do it.",pts:2},
+      {opt:"2",text:"Think you can take him?",pts:2}
+    ]}
+  ]},
+
+  6: { note:"Desbloqueia Cheap Shot → reduz balas usadas no Down Shot.", choices:[
+    { prompt:"I believe in you.", options:[
+      {opt:"1",text:"I believe in you.",pts:3},
+      {opt:"2",text:"That's good.",pts:2}
+    ]},
+    { prompt:"Not at all.", options:[
+      {opt:"1",text:"Not at all.",pts:3}
+    ]},
+    { prompt:"Phone Call: Of course I won't.", options:[
+      {opt:"1",text:"Of course.",pts:2}
+    ]}
+  ]},
+
+  7: { note:"Sem respostas que dão pontos.", choices:[] },
+
+  8: { note:"Desbloqueia Electric Slug → aumenta dano de Bullet Hail + libera request 'A Mother's Aggression'.", choices:[
+    { prompt:"Is my mom really a bad person?", options:[
+      {opt:"1",text:"No, she's not.",pts:2},
+      {opt:"2",text:"Is that what you think?",pts:2}
+    ]},
+    { prompt:"I believe in them.", options:[
+      {opt:"1",text:"I believe in them.",pts:3},
+      {opt:"2",text:"It'll work out.",pts:2}
+    ]}
+  ]},
+
+  9: { note:"Requer completar request 'A Mother's Aggression'.", choices:[
+    { prompt:"I'm glad to hear that.", options:[
+      {opt:"1",text:"I'm glad.",pts:3},
+      {opt:"2",text:"Thanks to Phantom Thieves.",pts:2}
+    ]},
+    { prompt:"It means you've matured.", options:[
+      {opt:"1",text:"You've matured.",pts:3},
+      {opt:"2",text:"Makes sense.",pts:3},
+      {opt:"3",text:"A little.",pts:2}
+    ]},
+    { prompt:"He wants to win at all costs.", options:[
+      {opt:"1",text:"That's true.",pts:0}
+    ]},
+    { prompt:"Phone Call", options:[
+      {opt:"1",text:"Any response.",pts:2}
+    ]}
+  ]},
+
+  10: { note:"Desbloqueia Oda Special → ignora resistências inimigas + Mada para fusão.", choices:[] }
+
+},
 
   justice: { // Goro Akechi
-    1: { note:"Automático via história. P5R tem escolhas com pontos.", choices:[
-      { prompt:"(P5R) What did you think of the case?", options:[
-        {opt:"1",text:"It was impressive.",pts:2},{opt:"2",text:"Something seemed off.",pts:3}]}]},
-    2: { note:"", choices:[
-      { prompt:"(P5R) Do you agree with my assessment?", options:[
-        {opt:"2",text:"Not entirely.",pts:3},{opt:"1",text:"You make a good point.",pts:2}]}]},
-    3: { note:"", choices:[
-      { prompt:"(P5R) What do you think about the Phantom Thieves?", options:[
-        {opt:"1",text:"They do good work.",pts:2},{opt:"2",text:"It's more complicated than that.",pts:3}]}]},
-    4: { note:"", choices:[] },
-    5: { note:"", choices:[] },
-    6: { note:"", choices:[] },
-    7: { note:"", choices:[] },
-    8: { note:"⚠️ Crítico para o Final verdadeiro — Rank 8 antes de 11/17", choices:[
-      { prompt:"(P5R) Are you sure you want to hear this?", options:[
-        {opt:"1",text:"Tell me everything.",pts:3},{opt:"2",text:"Only if you want to.",pts:2}]}]},
-    9: { note:"", choices:[] },
-    10: { note:"Automático. Desbloqueia Loki (Persona de Akechi)", choices:[] }
+
+  1: { note:"Automático via história. P5R tem escolhas com pontos.", choices:[] },
+
+  2: { note:"", choices:[
+    { prompt:"(P5R) I found myself with some free time...", options:[
+      {opt:"1",text:"You always seem so busy.",pts:2}]},
+
+    { prompt:"(P5R) How will you handle this?", options:[
+      {opt:"1",text:"Shoot very carefully.",pts:2},
+      {opt:"2",text:"I'll go for a power shot.",pts:2}]},
+
+    { prompt:"(P5R) I didn't expect you to see through it.", options:[
+      {opt:"3",text:"I see a lot of things.",pts:3},
+      {opt:"1",text:"Maybe I'll be a detective.",pts:2},
+      {opt:"2",text:"I see a lot of things.",pts:2}]},
+
+    { prompt:"(P5R) Phone: Want to hang out again?", options:[
+      {opt:"3",text:"As rivals?",pts:2}]}
+  ]},
+
+  3: { note:"Requer Knowledge 3 e Charm 3", choices:[
+    { prompt:"(P5R) Looks like I've been spotted.", options:[
+      {opt:"1",text:"Should’ve figured.",pts:3},
+      {opt:"3",text:"Your life must be so hard.",pts:2}]},
+
+    { prompt:"(P5R) Phone call follow-up", options:[
+      {opt:"2",text:"Wasn't it fun?",pts:2}]}
+  ]},
+
+  4: { note:"", choices:[
+    { prompt:"(P5R) About the club...", options:[
+      {opt:"3",text:"Now this is my kind of club.",pts:3},
+      {opt:"1",text:"Do they have coffee?",pts:2}]},
+
+    { prompt:"(P5R) Drinks?", options:[
+      {opt:"1",text:"Any recommendations?",pts:3},
+      {opt:"2",text:"Anything’s fine by me.",pts:2}]},
+
+    { prompt:"(P5R) Relaxing place...", options:[
+      {opt:"1",text:"It's a great place.",pts:2}]},
+
+    { prompt:"(P5R) Do you cook?", options:[
+      {opt:"1",text:"Pretty frequently.",pts:3},
+      {opt:"2",text:"I can use a microwave…",pts:3},
+      {opt:"3",text:"All I need is curry.",pts:2}]},
+
+    { prompt:"(P5R) Phone: Feeling after solving case", options:[
+      {opt:"2",text:"I kinda get it.",pts:2}]}
+  ]},
+
+  5: { note:"", choices:[
+    { prompt:"(P5R) Realistic game...", options:[
+      {opt:"1",text:"Are you used to gunplay?",pts:2}]},
+
+    { prompt:"(P5R) Childhood hero talk", options:[
+      {opt:"1",text:"You wanted to be a hero?",pts:3},
+      {opt:"2",text:"Very interesting.",pts:2}]},
+
+    { prompt:"(P5R) Phone: About performance", options:[
+      {opt:"1",text:"You did fine.",pts:2},
+      {opt:"2",text:"You’ve still got a long way to go.",pts:2},
+      {opt:"3",text:"You were getting cocky.",pts:2}]}
+  ]},
+
+  6: { note:"Disponível a partir de 9/3", choices:[
+    { prompt:"(P5R) Bathhouse scene", options:[
+      {opt:"3",text:"A while, huh?",pts:3},
+      {opt:"1",text:"So relaxing...",pts:2}]},
+
+    { prompt:"(P5R) His past", options:[
+      {opt:"2",text:"...You've been through a lot.",pts:2}]},
+
+    { prompt:"(P5R) Feeling dizzy?", options:[
+      {opt:"1",text:"This is nothing.",pts:3},
+      {opt:"2",text:"I'll stay until you're ready.",pts:3},
+      {opt:"3",text:"Are YOU okay?",pts:2}]},
+
+    { prompt:"(P5R) Lightheaded", options:[
+      {opt:"1",text:"Same.",pts:3},
+      {opt:"2",text:"Guess I win.",pts:2}]},
+
+    { prompt:"(P5R) Why tell me?", options:[
+      {opt:"1",text:"Because we get along.",pts:2},
+      {opt:"2",text:"Because we're similar.",pts:2}]},
+
+    { prompt:"(P5R) Victims of adults", options:[
+      {opt:"1",text:"I think you're right.",pts:3},
+      {opt:"3",text:"Can I put my clothes on?",pts:2}]},
+
+    { prompt:"(P5R) Phone follow-up", options:[
+      {opt:"3",text:"My bad, I guess.",pts:2}]}
+  ]},
+
+  7: { note:"Requer Knowledge 4", choices:[
+    { prompt:"(P5R) Billiards talk", options:[
+      {opt:"1",text:"That's why it's so fun.",pts:3},
+      {opt:"2",text:"Yeah, it's convoluted…",pts:2}]},
+
+    { prompt:"(P5R) Skill praise", options:[
+      {opt:"2",text:"I couldn't let myself lose.",pts:3}]},
+
+    { prompt:"(P5R) Rival choice (IMPORTANTE)", options:[
+      {opt:"3",text:"You're my rival.",pts:0},
+      {opt:"1",text:"I'll think about it.",pts:0}]},
+
+    { prompt:"(P5R) Phone", options:[
+      {opt:"3",text:"We're rivals, aren't we?",pts:0}]}
+  ]},
+
+  8: { note:"⚠️ Crítico para o Final verdadeiro — Rank 8 antes de 11/17", choices:[
+    { prompt:"(P5R) Duel outcome", options:[
+      {opt:"1",text:"I definitely wouldn’t lose.",pts:3}]},
+
+    { prompt:"(P5R) Refuse to lose", options:[
+      {opt:"2",text:"Really hate losing, don’t you?",pts:2},
+      {opt:"1",text:"Same here.",pts:1}]},
+
+    { prompt:"(P5R) Duel acceptance (IMPORTANTE)", options:[
+      {opt:"1",text:"I accept.",pts:0}]}
+  ]},
+
+  9: { note:"Automático via história (com escolhas importantes fora do rank)", choices:[] },
+
+  10: { note:"Automático. Desbloqueia Loki (Persona de Akechi)", choices:[] }
+
+},
+
+consultant: { // Takuto Maruki
+  1: { 
+    note:"Disponível após 5/13. DEADLINE: Rank 9 antes de 11/17 para liberar o 3º semestre.", 
+    choices:[
+      { prompt:"What brings you here today?", options:[
+        {opt:"1",text:"I wanted to talk.",pts:3},
+        {opt:"2",text:"I was told to come.",pts:2}
+      ]}
+    ]
   },
 
-  consultant: { // Takuto Maruki
-    1: { note:"Disponível após 5/13. DEADLINE: Rank 9 antes de 11/18.", choices:[
-      { prompt:"What brings you here today?", options:[
-        {opt:"1",text:"I wanted to talk.",pts:3},{opt:"2",text:"I was told to come.",pts:2}]}]},
-    2: { note:"", choices:[
-      { prompt:"What do you think about the idea of an 'ideal reality'?", options:[
-        {opt:"1",text:"It sounds appealing.",pts:2},{opt:"3",text:"It could be dangerous.",pts:3}]}]},
-    3: { note:"", choices:[
-      { prompt:"Do you think people can recover from trauma?", options:[
-        {opt:"1",text:"With time, yes.",pts:3},{opt:"2",text:"Not always.",pts:2}]}]},
-    4: { note:"", choices:[
-      { prompt:"What do you think happiness really is?", options:[
-        {opt:"2",text:"Something you find yourself.",pts:3},{opt:"1",text:"Different for everyone.",pts:2}]}]},
-    5: { note:"", choices:[
-      { prompt:"Do you think it's wrong to want to protect someone from pain?", options:[
-        {opt:"2",text:"It depends on how.",pts:3},{opt:"1",text:"Not at all.",pts:2}]}]},
-    6: { note:"", choices:[
-      { prompt:"Have you ever wanted to change the past?", options:[
-        {opt:"1",text:"Of course.",pts:3},{opt:"2",text:"The past can't change.",pts:2}]}]},
-    7: { note:"", choices:[
-      { prompt:"What would you sacrifice for someone else's happiness?", options:[
-        {opt:"1",text:"A great deal.",pts:3},{opt:"2",text:"It has limits.",pts:2}]}]},
-    8: { note:"", choices:[
-      { prompt:"Is reality really worth all this pain?", options:[
-        {opt:"1",text:"Yes, always.",pts:3},{opt:"2",text:"Sometimes I wonder.",pts:2}]}]},
-    9: { note:"⚠️ Complete antes de 18/11 ou perde o True Ending.", choices:[
-      { prompt:"You could just accept what I've made for you.", options:[
-        {opt:"1",text:"I'd rather face reality.",pts:3},{opt:"2",text:"Tell me more.",pts:2}]}]},
-    10: { note:"Automático via história do 3º semestre. Desbloqueia Azathoth para fusão.", choices:[] }
+  2: { 
+    note:"Desbloqueia Detox X → chance de curar status negativos automaticamente + SP + itens.", 
+    choices:[
+      { prompt:"Welcome! Thank you for coming.", options:[
+        {opt:"1",text:"We made a deal.",pts:2},
+        {opt:"2",text:"I'm a little nervous.",pts:2}
+      ]},
+      { prompt:"Maybe that's a little weird for you to hear...", options:[
+        {opt:"1",text:"But it all sounds right.",pts:3},
+        {opt:"2",text:"Yep.",pts:2}
+      ]},
+      { prompt:"You can have them! They're yours!", options:[
+        {opt:"1",text:"Well, okay.",pts:2}
+      ]}
+    ]
   },
+
+  3: { 
+    note:"Desbloqueia Flow → chance de começar batalhas com Charge/Concentrate.", 
+    choices:[
+      { prompt:"I'm glad the ones who came to me...", options:[
+        {opt:"1",text:"So they have, huh?",pts:2},
+        {opt:"3",text:"Thanks to you, probably.",pts:2}
+      ]},
+      { prompt:"You remember how I asked you...", options:[
+        {opt:"1",text:"Of course.",pts:2},
+        {opt:"2",text:"Yeah, for our deal.",pts:2}
+      ]},
+      { prompt:"Do you have any thoughts on this kind of pain?", options:[
+        {opt:"1",text:"That one seems necessary.",pts:2}
+      ]},
+      { prompt:"You helped me realize that purpose again.", options:[
+        {opt:"1",text:"Did that help?",pts:2},
+        {opt:"2",text:"Don't worry about it.",pts:2}
+      ]},
+      { prompt:"(Phone) I thought I'd thank you again.", options:[
+        {opt:"1",text:"Good work over there.",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  4: { 
+    note:"", 
+    choices:[
+      { prompt:"I had no idea a cat's claws were so sharp...", options:[
+        {opt:"1",text:"I know, right…?",pts:3},
+        {opt:"3",text:"Talk about a reward.",pts:2}
+      ]},
+      { prompt:"...like putting antibiotics on a scratch.", options:[
+        {opt:"3",text:"Is that what you're researching?",pts:3},
+        {opt:"1",text:"That'd be great.",pts:2}
+      ]},
+      { prompt:"We'll be able to perform more effective treatment...", options:[
+        {opt:"1",text:"That's a grand plan.",pts:2},
+        {opt:"2",text:"You're so kind.",pts:2}
+      ]},
+      { prompt:"I wouldn't be able to pay you!", options:[
+        {opt:"1",text:"That sounds fun.",pts:3}
+      ]},
+      { prompt:"(Phone) Is your schoolwork being affected?", options:[
+        {opt:"1",text:"I feel completely fine.",pts:2,tag:"p5r"},
+        {opt:"2",text:"It's part of our deal.",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  5: { 
+    note:"Desbloqueia Mindfulness → chance de recuperar SP automaticamente.", 
+    choices:[
+      { prompt:"Go ahead, enjoy!", options:[
+        {opt:"1",text:"This looks great.",pts:3},
+        {opt:"3",text:"I could just take cash...",pts:2}
+      ]},
+      { prompt:"You can see this law in action...", options:[
+        {opt:"3",text:"You know, you're right.",pts:3},
+        {opt:"2",text:"They're getting paid.",pts:2}
+      ]},
+      { prompt:"Your unconscious desires may have changed...", options:[
+        {opt:"1",text:"My senses lied to me!",pts:2},
+        {opt:"2",text:"As long as it tastes good.",pts:2}
+      ]},
+      { prompt:"It would have been a subjective truth...", options:[
+        {opt:"2",text:"I guess so.",pts:2}
+      ]},
+      { prompt:"(Phone) It ended up being another discussion...", options:[
+        {opt:"1",text:"I really don't mind.",pts:2,tag:"p5r"},
+        {opt:"3",text:"It was thought-provoking.",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  6: { 
+    note:"Disponível após 9/19.", 
+    choices:[
+      { prompt:"This is fantastic.", options:[
+        {opt:"1",text:"Another cup?",pts:2},
+        {opt:"2",text:"We've got curry too.",pts:2}
+      ]},
+      { prompt:"I'd appreciate your help again.", options:[
+        {opt:"1",text:"I can do that.",pts:3},
+        {opt:"2",text:"It's a deal.",pts:2}
+      ]},
+      { prompt:"I don't think that would be enough...", options:[
+        {opt:"3",text:"So give up.",pts:2}
+      ]},
+      { prompt:"(Phone)", options:[
+        {opt:"1",text:"Calm down.",pts:2,tag:"p5r"},
+        {opt:"2",text:"What's going on?",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  7: { 
+    note:"Desbloqueia Quick Flow.", 
+    choices:[
+      { prompt:"I've taken an academic interest...", options:[
+        {opt:"1",text:"You really are dedicated.",pts:3},
+        {opt:"3",text:"Are you a fan?",pts:2}
+      ]},
+      { prompt:"How is such a feat possible?", options:[
+        {opt:"1",text:"No idea.",pts:3},
+        {opt:"2",text:"As in removing them?",pts:3}
+      ]},
+      { prompt:"Does that remind you of anything?", options:[
+        {opt:"1",text:"The change of heart..."}
+      ]},
+      { prompt:"You think I'm getting anywhere?", options:[
+        {opt:"2",text:"Sounds far-fetched.",pts:3},
+        {opt:"3",text:"It's intriguing.",pts:3}
+      ]}
+    ]
+  },
+
+  8: { 
+    note:"", 
+    choices:[
+      { prompt:"I know it's been a while...", options:[
+        {opt:"2",text:"What do you mean?",pts:3},
+        {opt:"1",text:"I'm good on cookies.",pts:2}
+      ]},
+      { prompt:"I'd like to take you to that buffet...", options:[
+        {opt:"1",text:"Ooh, really?",pts:3},
+        {opt:"2",text:"Can you afford that?",pts:2},
+        {opt:"3",text:"I prefer sushi.",pts:2}
+      ]},
+      { prompt:"No holding back!", options:[
+        {opt:"1",text:"Thanks for the food!",pts:3},
+        {opt:"3",text:"This is quite the spread.",pts:2}
+      ]},
+      { prompt:"Oh, he's uhhh...", options:[
+        {opt:"3",text:"We've made a deal.",pts:3},
+        {opt:"1",text:"I'm a student.",pts:2}
+      ]},
+      { prompt:"My paper is almost finished.", options:[
+        {opt:"1",text:"Congratulations.",pts:3},
+        {opt:"2",text:"Way to go.",pts:3}
+      ]},
+      { prompt:"(Phone)", options:[
+        {opt:"1",text:"He's a good friend.",pts:2,tag:"p5r"}
+      ]}
+    ]
+  },
+
+  9: { 
+    note:"⚠️ OBRIGATÓRIO antes de 11/17 para liberar o TRUE ENDING.", 
+    choices:[
+      { prompt:"This will probably be the last time...", options:[
+        {opt:"1",text:"Kind of sad...",pts:3},
+        {opt:"2",text:"Is our deal over?",pts:2},
+        {opt:"3",text:"Take care.",pts:2}
+      ]}
+    ]
+  },
+
+  10: { 
+    note:"Automático via história (3º semestre). Desbloqueia Azathoth + habilidades finais.", 
+    choices:[]
+  }
+},
 
   fool:      Object.fromEntries([...Array(10)].map((_,i)=>[i+1,{note:i===0?"Automático — Igor (Velvet Room)":"",choices:[]}])),
   magician:  Object.fromEntries([...Array(10)].map((_,i)=>[i+1,{note:i===0?"Automático — Morgana":"",choices:[]}])),
   judgment:  Object.fromEntries([...Array(10)].map((_,i)=>[i+1,{note:i===0?"Automático — Sae Niijima":"",choices:[]}])),
 
-  strength: { // Caroline & Justine
-    1: { note:"Sem diálogo — apresente Personas com skills específicas para subir rank.", choices:[] },
-    2: { note:"Persona com habilidade específica determinada pelas gêmeas.", choices:[] },
-    3: { note:"", choices:[] },
-    4: { note:"", choices:[] },
-    5: { note:"", choices:[] },
-    6: { note:"", choices:[] },
-    7: { note:"", choices:[] },
-    8: { note:"", choices:[] },
-    9: { note:"", choices:[] },
-    10: { note:"Desbloqueia fusão irrestrita + Zaou-Gongen", choices:[] }
+  strength: { // Caroline & Justine (Twin Wardens)
+
+  1: { 
+    note:"Jack Frost com Mabufu (aprende no lvl 12). Desbloqueia Group Guillotine (fusão tripla).", 
+    choices:[] 
   },
+
+  2: { 
+    note:"Ame-no-Uzume com Frei (herdar de Suzaku ou Skill Card).", 
+    choices:[] 
+  },
+
+  3: { 
+    note:"Flauros com Tarukaja (fusão tripla: Berith + Orobas + Eligor). Desbloqueia Lockdown.", 
+    choices:[] 
+  },
+
+  4: { 
+    note:"Phoenix com Counter (herdar de Yaksini).", 
+    choices:[] 
+  },
+
+  5: { 
+    note:"Setanta com Rakukaja (herdar de Lamia ou Berith). Desbloqueia Special Treatment (pagar para fundir Personas acima do nível).", 
+    choices:[] 
+  },
+
+  6: { 
+    note:"Neko Shogun com Dekaja (Anzu lvl 28 aprende). Fusão tripla necessária.", 
+    choices:[] 
+  },
+
+  7: { 
+    note:"Lachesis com Tetraja (Clotho lvl 28 → fundir com Regent).", 
+    choices:[] 
+  },
+
+  8: { 
+    note:"Hecatoncheires com Masukunda (Lilim lvl 34 aprende). Desbloqueia Guillotine Booster (fusões avançadas).", 
+    choices:[] 
+  },
+
+  9: { 
+    note:"Bugs com Samarecarm (Hariti lvl 41 aprende + fusão tripla com Pixie e Pisaca).", 
+    choices:[] 
+  },
+
+  10: { 
+    note:"Seth com High Counter (via Skill Card ou Dakini lvl 52). Desbloqueia VIP Treatment + Zaou-Gongen.", 
+    choices:[] 
+  }
+
+},
 };
 
 renderConfidants();
